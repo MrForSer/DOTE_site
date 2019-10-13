@@ -11,6 +11,5 @@ $(document).on("scroll", function () {
 })
 
 function login() {
-    document.getElementById("hide").style.display = "block";
-    document.getElementById("window").style.display = "block";
+
 }
