@@ -9,8 +9,3 @@ $(document).on("scroll", function () {
         $("header").removeClass("fixed");
     else $("header").attr("class", "fixed");
 })
-
-function login() {
-    document.getElementById("hide").style.display = "block";
-    document.getElementById("window").style.display = "block";
-}
