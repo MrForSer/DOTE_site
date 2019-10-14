@@ -23,10 +23,8 @@ function closeForm() {
 }
 
 function validate() {
-    //alert("called");
     var login = document.getElementById('login').value;
     var password = document.getElementById('password').value;
-    //alert("stored");
     if((login == "admin") && (password == "admin")){
         alert("Данные верны");
     } else if (login == ""){
@@ -35,4 +33,18 @@ function validate() {
         alert("Введите пароль")}
     else
         alert("Логин или пароль указаны некорректно");
+}
+
+function sendMessage() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    if(name == ""){
+        alert("Укажите ваше имя");
+    } else if (email == ""){
+            alert("Введите адрес электронной почты");
+    } else if (message == ""){
+        alert("Введите ваше сообщение")}
+    else
+        alert("Сообщение отправлено");
 }
