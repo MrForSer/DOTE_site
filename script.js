@@ -27,9 +27,12 @@ function validate() {
     var login = document.getElementById('login').value;
     var password = document.getElementById('password').value;
     //alert("stored");
-    if((login == "admin")&&(password == "admin")){
+    if((login == "admin") && (password == "admin")){
         alert("Данные верны");
-    }
+    } else if (login == ""){
+            alert("Введите логин");
+    } else if (password == ""){
+        alert("Введите пароль")}
     else
         alert("Логин или пароль указаны некорректно");
 }
