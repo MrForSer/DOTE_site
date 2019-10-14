@@ -116,19 +116,19 @@
             <input type="email" placeholder="Введите ваш адрес эл. почты" name="email" id="email"><br>
             <label for="message">Сообщение <span>*</span></label><br>
             <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
-            <div id="mess_send" class="btn">Отправить</div>
+            <div id="mess_send" class="btn" onclick="sendMessage()">Отправить</div>
         </form>
     </div>
 
     <div class="hide" id="hide"></div>
-    <div class="login_form" id="login_form">
+    <div class="loginForm" id="loginForm">
         <label for="login">Логин</label><br>
         <input type="text" placeholder="Введите логин" name="login" id="login"><br>
         <label for="password">Пароль</label><br>
-        <input type="email" placeholder="Введите пароль" name="password" id="password"><br>
+        <input type="password" placeholder="Введите пароль" name="password" id="password"><br>
         <div id ="buttonHolder">
-            <div id="Войти" class="btn">Войти</div>
-            <div id="Отмена" class="btn" onclick="closeWindow()">Отмена</div>
+            <div id="Войти" class="btn" onclick="validate(login, password)">Войти</div>
+            <div id="Отмена" class="btn" onclick="closeForm()">Отмена</div>
         </div>
     </div>
 

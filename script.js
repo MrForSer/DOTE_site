@@ -10,16 +10,14 @@ $(document).on("scroll", function () {
     else $("header").attr("class", "fixed");
 })
 
-var modal = document.getElementById('login_form');
-
 function displayForm() {
     document.getElementById("hide").style.display = "block";
-    document.getElementById("login_form").style.display = "block";
+    document.getElementById("loginForm").style.display = "block";
 }
 
 function closeForm() {
     document.getElementById("hide").style.display = "none";
-    document.getElementById("login_form").style.display = "none";
+    document.getElementById("loginForm").style.display = "none";
 }
 
 function validate() {
@@ -46,5 +44,5 @@ function sendMessage() {
     } else if (message == ""){
         alert("Введите ваше сообщение")}
     else
-        alert("Сообщение отправлено");
+        alert("Сообщение сохранено");
 }
