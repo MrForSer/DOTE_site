@@ -304,7 +304,7 @@ header.fixed #logo {
     padding: 10px;
     background: #f6f6f6;
     width: 15%;
-    height: 21%;
+    height: 32%;
     position: absolute;
     left: 40%;
     top: 30%;
@@ -343,73 +343,5 @@ header.fixed #logo {
 }
 
 #buttonHolder{
-    margin-left: 22%
-}
-
-@media (max-width: 1580px) and (min-width: 1025px) {
-    #buttonHolder{
-        margin-left: 2%
-    }
-}
-
-@media (max-width: 1024px) and (min-width: 801) {
-    #buttonHolder{
-        margin-left: 2%;
-    }
-    #login_form .btn {
-        border-radius: 1px;
-        padding: 1px 1px;
-        font-size: 0.8em;
-        text-shadow: #454545 0 0 1px;
-    }
-    #login_form label {
-        color: #505050;
-        cursor: pointer;
-        font-size: 0.8em;
-        font-family: 'Roboto', serif;
-        text-align: center;
-    }
-    #login_form input {
-        margin-bottom: 6px;
-        width: 90%;
-        padding: 1px 2%;
-        border-radius: 3px;
-        border: 1px solid silver;
-        font-size: 0.7em;
-        color: #4a4a4a;
-    }
-    .login_form {
-        height: 12%;
-    }
-}
-
-@media (max-width: 800px) {
-    #buttonHolder{
-        margin-left: 2%;
-    }
-    #login_form .btn {
-        border-radius: 1px;
-        padding: 1px 1px;
-        font-size: 0.8em;
-        text-shadow: #454545 0 0 1px;
-    }
-    #login_form label {
-        color: #505050;
-        cursor: pointer;
-        font-size: 0.8em;
-        font-family: 'Roboto', serif;
-        text-align: center;
-    }
-    #login_form input {
-        margin-bottom: 6px;
-        width: 90%;
-        padding: 1px 2%;
-        border-radius: 3px;
-        border: 1px solid silver;
-        font-size: 0.7em;
-        color: #4a4a4a;
-    }
-    .login_form {
-        height: 12%;
-    }
+    margin: 5%;
 }

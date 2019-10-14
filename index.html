@@ -19,7 +19,7 @@
         <a href="#" title="Продукты" onclick="slowScroll('#products')">Продукты</a>
         <a href="#" title="Карьера" onclick="slowScroll('#career')">Карьера</a>
         <a href="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
-        <a href="#" title="Авторизация" onclick="login()">Авторизация</a>
+        <a href="#" title="Авторизация" onclick="displayForm()">Авторизация</a>
     </div>
     </header>
 
@@ -128,7 +128,7 @@
         <input type="email" placeholder="Введите пароль" name="password" id="password"><br>
         <div id ="buttonHolder">
             <div id="Войти" class="btn">Войти</div>
-            <div id="Отмена" class="btn">Отмена</div>
+            <div id="Отмена" class="btn" onclick="closeWindow()">Отмена</div>
         </div>
     </div>
 

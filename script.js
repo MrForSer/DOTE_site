@@ -10,7 +10,14 @@ $(document).on("scroll", function () {
     else $("header").attr("class", "fixed");
 })
 
-function login() {
+var modal = document.getElementById('login_form');
+
+function displayForm() {
     document.getElementById("hide").style.display = "block";
     document.getElementById("login_form").style.display = "block";
+}
+
+function closeWindow() {
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("login_form").style.display = "none";
 }
