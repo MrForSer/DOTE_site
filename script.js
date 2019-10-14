@@ -40,9 +40,16 @@ function sendMessage() {
     if(name == ""){
         alert("Укажите ваше имя");
     } else if (email == ""){
-            alert("Введите адрес электронной почты");
+        alert("Введите адрес электронной почты");
+    } else if (validateEmail(email) == false){
+        alert ("Убедитесь, что адрес электронной почты введен корректно")
     } else if (message == ""){
         alert("Введите ваше сообщение")}
     else
         alert("Сообщение сохранено");
+}
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
 }
