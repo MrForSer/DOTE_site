@@ -166,7 +166,7 @@ header.fixed #logo {
     padding-bottom: 20px;
 }
 
-#main span, #products span, #career span {color: #565656;}
+#main span, #products span, #career span {color: #565656;}/
 
 /* Дополнительные настройки для раздела с продуктами */
 #products h4 {
