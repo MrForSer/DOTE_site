@@ -194,6 +194,8 @@ header.fixed #logo {
     color: #484848;
 }
 
+ul {margin-left: 50px;}
+
 /* Форма ввода данных для обратной связи */
 #input_form {
     margin-top: 15px;
