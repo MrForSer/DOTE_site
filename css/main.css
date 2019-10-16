@@ -24,12 +24,12 @@ body, html {
 /* тут задается цвет и шрифт по-умолчанию для body */
 body {
     background-color: #fafafa;
-    font-family: Trebuchet MS, Helvetica;
+    font-family: Trebuchet MS, serif;
 }
 /* настройки заголовка, padding - отступ, position: fixed для закрепления заголовка при скроллинге */
 header {
     width: 100%;
-    padding: 10px 0.5% 0px 0.5%;
+    padding: 10px 0.5% 0 0.5%;
     background: transparent;
     float: left;
     position: fixed;
@@ -108,8 +108,7 @@ header.fixed #logo {
 /* background-blend-mode для наложения цвета на картинку */
 #top {
     width: 100%;
-    background-image: url(https://storage.googleapis.com/lmo/2017/01/a0be5f8c-mackbook-on-table-showcase.jpg);
-    /*background-image: url(https://i.ytimg.com/vi/eKQhQzgbH7Q/maxresdefault.jpg);*/
+    background-image: url(../images/mackbook-on-table-showcase.jpg);
     background-blend-mode: multiply;
     background-color: #676e73;
     background-size: cover;
@@ -166,7 +165,7 @@ header.fixed #logo {
     padding-bottom: 20px;
 }
 
-#main span, #products span, #career span {color: #565656;}/
+#main span, #products span, #career span {color: #565656;}
 
 /* Дополнительные настройки для раздела с продуктами */
 #products h4 {
@@ -263,8 +262,8 @@ ul {margin-left: 50px;}
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     display: none;
 }
 

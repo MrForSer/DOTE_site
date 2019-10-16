@@ -8,7 +8,7 @@ $(document).on("scroll", function () {
     if ($(window).scrollTop() === 0)
         $("header").removeClass("fixed");
     else $("header").attr("class", "fixed");
-})
+});
 
 function displayForm() {
     document.getElementById("hide").style.display = "block";
