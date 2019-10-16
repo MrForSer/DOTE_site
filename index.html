@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>DevelopmentOnTheEdge</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="images/dote-ico.png" type="image/x-icon">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -15,11 +15,11 @@
         <span>DevelopmentOnTheEdge</span>
     </div>
     <div id="about">
-        <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
-        <a href="#" title="Продукты" onclick="slowScroll('#products')">Продукты</a>
-        <a href="#" title="Карьера" onclick="slowScroll('#career')">Карьера</a>
-        <a href="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
-        <a href="#" title="Авторизация" onclick="displayForm()">Авторизация</a>
+        <a href="#" onclick="slowScroll('#main')" title="Возможности">Возможности</a>
+        <a href="#" onclick="slowScroll('#products')" title="Продукты">Продукты</a>
+        <a href="#" onclick="slowScroll('#career')" title="Карьера">Карьера</a>
+        <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+        <a href="#" onclick="displayForm()" title="Авторизация">Авторизация</a>
     </div>
 </header>
 
@@ -59,7 +59,7 @@
     <h2>Продукты</h2>
     <h4>Bean Explorer</h4>
     <div class="image">
-        <img src="images/BE_logo.png" height="46" width="219" alt="BE_logo"/>
+        <img alt="BE_logo" height="46" src="images/BE_logo.png" width="219"/>
     </div>
     <section><b>BeanExplorer</b> — созданная нами технология для автоматической генерации интерактивных пользовательских
         интерфейсов и публикации данных в различном виде. Она помогает нашим разработчикам быстро и с минимальными
@@ -73,14 +73,14 @@
     </section>
     <h4>BioUML</h4>
     <div class="image">
-        <img src="images/BioUML_logo.png" height="27" width="215" alt="BioUML_logo"/>
+        <img alt="BioUML_logo" height="27" src="images/BioUML_logo.png" width="215"/>
     </div>
     <section><b>BioUML</b> — расширяемая открытая система на языке Java, адаптирующая подход визуального моделирования
         для формального описания и симуляции сложных биологических систем.
     </section>
     <h4>E-city</h4>
     <div class="image">
-        <img src="images/E-city_logo_transparent-150x66.png" height="66" width="150" alt="E-city_logo"/>
+        <img alt="E-city_logo" height="66" src="images/E-city_logo_transparent-150x66.png" width="150"/>
     </div>
     <section><b>E-city</b> — продукт для сотрудников муниципальных учреждений, специалистов местных органов
         самоуправления и жителей городов, призванный решить вопросы автоматизации процесса управления муниципальным
@@ -89,7 +89,7 @@
     </section>
     <h4>Портал "Мой Дом"</h4>
     <div class="image">
-        <img src="images/my_home_logo.png" height="72" width="150" alt="My_home_logo"/>
+        <img alt="My_home_logo" height="72" src="images/my_home_logo.png" width="150"/>
     </div>
     <section>Единый портал <b>ЖКХ "Мой дом"</b> призван обеспечить защищенное и удобное для работы информационное
         пространство для всех потребителей жилищно-коммунальных услуг (ЖКУ), а также представителей управляющих
@@ -97,7 +97,7 @@
     </section>
     <h4>ТИК "РЕГИОН"</h4>
     <div class="image">
-        <img src="images/region_logo.png" height="53" width="215" alt="Region_logo"/>
+        <img alt="Region_logo" height="53" src="images/region_logo.png" width="215"/>
     </div>
     <section>Одним из приоритетных направлений развития любого региона является создание информационной системы
         поддержки деятельности государственных органов по оказанию услуг населению. Повышение эффективности управления,
@@ -144,24 +144,24 @@
     </div>
     <form id="input_form">
         <label for="name">Имя <span>*</span></label><br>
-        <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+        <input id="name" name="name" placeholder="Введите имя" type="text"><br>
         <label for="email">Ваша почта <span>*</span></label><br>
-        <input type="email" placeholder="Введите ваш адрес эл. почты" name="email" id="email"><br>
+        <input id="email" name="email" placeholder="Введите ваш адрес эл. почты" type="email"><br>
         <label for="message">Сообщение <span>*</span></label><br>
-        <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
-        <div id="mess_send" class="btn" onclick="sendMessage()">Отправить</div>
+        <textarea id="message" name="message" placeholder="Введите ваше сообщение"></textarea><br>
+        <div class="btn" id="mess_send" onclick="sendMessage()">Отправить</div>
     </form>
 </div>
 
 <div class="hide" id="hide"></div>
 <div class="loginForm" id="loginForm">
     <label for="login">Логин</label><br>
-    <input type="text" placeholder="Введите логин" name="login" id="login"><br>
+    <input id="login" name="login" placeholder="Введите логин" type="text"><br>
     <label for="password">Пароль</label><br>
-    <input type="password" placeholder="Введите пароль" name="password" id="password"><br>
+    <input id="password" name="password" placeholder="Введите пароль" type="password"><br>
     <div id="buttonHolder">
-        <div id="Войти" class="btn" onclick="validate(login, password)">Войти</div>
-        <div id="Отмена" class="btn" onclick="closeForm()">Отмена</div>
+        <div class="btn" id="Войти" onclick="validate(login, password)">Войти</div>
+        <div class="btn" id="Отмена" onclick="closeForm()">Отмена</div>
     </div>
 </div>
 

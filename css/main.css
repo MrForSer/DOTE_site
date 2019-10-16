@@ -21,11 +21,13 @@ body, html {
     width: 100%;
     height: 100%;
 }
+
 /* тут задается цвет и шрифт по-умолчанию для body */
 body {
     background-color: #fafafa;
     font-family: Trebuchet MS, serif;
 }
+
 /* настройки заголовка, padding - отступ, position: fixed для закрепления заголовка при скроллинге */
 header {
     width: 100%;
@@ -48,6 +50,7 @@ header #logo span {
     margin-left: 40px;
     font-family: 'Suez One', serif;
 }
+
 /* media-теги для адаптивности, если ширина сайта больше 701px, то применяется следующий стиль */
 @media (min-width: 701px) {
     #logo {
@@ -55,11 +58,13 @@ header #logo span {
         width: 30%;
         font-size: 1.1em;
     }
+
     #about {
         float: right;
         width: 67%;
     }
 }
+
 /* если ширина сайта меньше 700px, то применяется следующий стиль */
 @media (max-width: 700px) {
     #logo {
@@ -67,11 +72,13 @@ header #logo span {
         width: 100%;
         font-size: 1.5em;
     }
+
     #about {
         float: left;
         width: 100%;
     }
 }
+
 /* настройки для блока about */
 #about {
     text-align: center;
@@ -79,12 +86,17 @@ header #logo span {
     line-height: 40px;
     margin-bottom: 10px;
 }
+
 /* настройки для ссылок блока about */
-#about > a {color: #fff}
+#about > a {
+    color: #fff
+}
+
 #about > a:hover {
     color: #b0b0b0;
     text-decoration: underline;
 }
+
 /* настройка расстояния между ссылками на разделы, кроме последнего элемента */
 #about > a:not(:last-child) {
     margin-right: 3%;
@@ -101,8 +113,13 @@ header.fixed #logo {
     color: #343434;
 }
 
-.fixed #about a {color: #343434}
-.fixed #about a:hover {color: #7c7c7c}
+.fixed #about a {
+    color: #343434
+}
+
+.fixed #about a:hover {
+    color: #7c7c7c
+}
 
 /* главный блок на сайте */
 /* background-blend-mode для наложения цвета на картинку */
@@ -165,7 +182,9 @@ header.fixed #logo {
     padding-bottom: 20px;
 }
 
-#main span, #products span, #career span {color: #565656;}
+#main span, #products span, #career span {
+    color: #565656;
+}
 
 /* Дополнительные настройки для раздела с продуктами */
 #products h4 {
@@ -193,7 +212,9 @@ header.fixed #logo {
     color: #484848;
 }
 
-ul {margin-left: 50px;}
+ul {
+    margin-left: 50px;
+}
 
 /* Форма ввода данных для обратной связи */
 #input_form {
@@ -310,6 +331,6 @@ ul {margin-left: 50px;}
     margin-right: 2%;
 }
 
-#buttonHolder{
+#buttonHolder {
     margin: 5%;
 }
