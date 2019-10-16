@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One&display=swap');
-/* настройки страницы */
+/* РЅР°СЃС‚СЂРѕР№РєРё СЃС‚СЂР°РЅРёС†С‹ */
 * {
     margin: 0;
     padding: 0;
     outline: none;
 }
 
-/* Настройки шрифта для заголовков */
+/* РќР°СЃС‚СЂРѕР№РєРё С€СЂРёС„С‚Р° РґР»СЏ Р·Р°РіРѕР»РѕРІРєРѕРІ */
 h1, h3 {
     font-family: 'Roboto slab', serif;
     font-weight: lighter;
@@ -16,17 +16,17 @@ h2, h4, h5 {
     font-family: 'Roboto', serif;
 }
 
-/* настройки для body и html */
+/* РЅР°СЃС‚СЂРѕР№РєРё РґР»СЏ body Рё html */
 body, html {
     width: 100%;
     height: 100%;
 }
-/* тут задается цвет и шрифт по-умолчанию для body */
+/* С‚СѓС‚ Р·Р°РґР°РµС‚СЃСЏ С†РІРµС‚ Рё С€СЂРёС„С‚ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ РґР»СЏ body */
 body {
     background-color: #fafafa;
     font-family: Trebuchet MS, Helvetica;
 }
-/* настройки заголовка, padding - отступ, position: fixed для закрепления заголовка при скроллинге */
+/* РЅР°СЃС‚СЂРѕР№РєРё Р·Р°РіРѕР»РѕРІРєР°, padding - РѕС‚СЃС‚СѓРї, position: fixed РґР»СЏ Р·Р°РєСЂРµРїР»РµРЅРёСЏ Р·Р°РіРѕР»РѕРІРєР° РїСЂРё СЃРєСЂРѕР»Р»РёРЅРіРµ */
 header {
     width: 100%;
     padding: 10px 0.5% 0px 0.5%;
@@ -35,20 +35,20 @@ header {
     position: fixed;
 }
 
-/* Настройки для логотипа */
+/* РќР°СЃС‚СЂРѕР№РєРё РґР»СЏ Р»РѕРіРѕС‚РёРїР° */
 header #logo {
     color: #fff;
     cursor: pointer;
 }
 
-/* Настройки конкретно для текста */
+/* РќР°СЃС‚СЂРѕР№РєРё РєРѕРЅРєСЂРµС‚РЅРѕ РґР»СЏ С‚РµРєСЃС‚Р° */
 header #logo span {
     font-size: 1.7em;
     line-height: 45px;
     margin-left: 40px;
     font-family: 'Suez One', serif;
 }
-/* media-теги для адаптивности, если ширина сайта больше 701px, то применяется следующий стиль */
+/* media-С‚РµРіРё РґР»СЏ Р°РґР°РїС‚РёРІРЅРѕСЃС‚Рё, РµСЃР»Рё С€РёСЂРёРЅР° СЃР°Р№С‚Р° Р±РѕР»СЊС€Рµ 701px, С‚Рѕ РїСЂРёРјРµРЅСЏРµС‚СЃСЏ СЃР»РµРґСѓСЋС‰РёР№ СЃС‚РёР»СЊ */
 @media (min-width: 701px) {
     #logo {
         float: left;
@@ -60,7 +60,7 @@ header #logo span {
         width: 67%;
     }
 }
-/* если ширина сайта меньше 700px, то применяется следующий стиль */
+/* РµСЃР»Рё С€РёСЂРёРЅР° СЃР°Р№С‚Р° РјРµРЅСЊС€Рµ 700px, С‚Рѕ РїСЂРёРјРµРЅСЏРµС‚СЃСЏ СЃР»РµРґСѓСЋС‰РёР№ СЃС‚РёР»СЊ */
 @media (max-width: 700px) {
     #logo {
         margin-top: 15px;
@@ -72,25 +72,25 @@ header #logo span {
         width: 100%;
     }
 }
-/* настройки для блока about */
+/* РЅР°СЃС‚СЂРѕР№РєРё РґР»СЏ Р±Р»РѕРєР° about */
 #about {
     text-align: center;
     font-size: 1em;
     line-height: 40px;
     margin-bottom: 10px;
 }
-/* настройки для ссылок блока about */
+/* РЅР°СЃС‚СЂРѕР№РєРё РґР»СЏ СЃСЃС‹Р»РѕРє Р±Р»РѕРєР° about */
 #about > a {color: #fff}
 #about > a:hover {
     color: #b0b0b0;
     text-decoration: underline;
 }
-/* настройка расстояния между ссылками на разделы, кроме последнего элемента */
+/* РЅР°СЃС‚СЂРѕР№РєР° СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РјРµР¶РґСѓ СЃСЃС‹Р»РєР°РјРё РЅР° СЂР°Р·РґРµР»С‹, РєСЂРѕРјРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° */
 #about > a:not(:last-child) {
     margin-right: 3%;
 }
 
-/* стиль для шапки при скроллинге, z-index для перекрывания */
+/* СЃС‚РёР»СЊ РґР»СЏ С€Р°РїРєРё РїСЂРё СЃРєСЂРѕР»Р»РёРЅРіРµ, z-index РґР»СЏ РїРµСЂРµРєСЂС‹РІР°РЅРёСЏ */
 .fixed {
     z-index: 5000;
     background-color: #fff;
@@ -104,8 +104,8 @@ header.fixed #logo {
 .fixed #about a {color: #343434}
 .fixed #about a:hover {color: #7c7c7c}
 
-/* главный блок на сайте */
-/* background-blend-mode для наложения цвета на картинку */
+/* РіР»Р°РІРЅС‹Р№ Р±Р»РѕРє РЅР° СЃР°Р№С‚Рµ */
+/* background-blend-mode РґР»СЏ РЅР°Р»РѕР¶РµРЅРёСЏ С†РІРµС‚Р° РЅР° РєР°СЂС‚РёРЅРєСѓ */
 #top {
     width: 100%;
     background-image: url(https://storage.googleapis.com/lmo/2017/01/a0be5f8c-mackbook-on-table-showcase.jpg);
@@ -118,7 +118,7 @@ header.fixed #logo {
     font-size: 3em;
 }
 
-/* если ширина больше 1000 пикселей */
+/* РµСЃР»Рё С€РёСЂРёРЅР° Р±РѕР»СЊС€Рµ 1000 РїРёРєСЃРµР»РµР№ */
 @media (min-width: 1001px) {
     #top {
         height: 1000px;
@@ -149,7 +149,7 @@ header.fixed #logo {
     color: #ccc;
 }
 
-/* Блок с возможностями */
+/* Р‘Р»РѕРє СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЏРјРё */
 #main {
     padding: 100px 20%;
     width: 60%;
@@ -160,14 +160,14 @@ header.fixed #logo {
     font-size: 1.3em;
 }
 
-/* Настройка разделов */
+/* РќР°СЃС‚СЂРѕР№РєР° СЂР°Р·РґРµР»РѕРІ */
 #main h2 {
     font-size: 3em;
     padding-bottom: 20px;
 }
 #main span {color: #565656;}
 
-/* Блок с продуктами */
+/* Р‘Р»РѕРє СЃ РїСЂРѕРґСѓРєС‚Р°РјРё */
 #products {
     padding: 100px 20%;
     width: 60%;
@@ -178,7 +178,7 @@ header.fixed #logo {
     font-size: 1.3em;
 }
 
-/* Настройка разделов */
+/* РќР°СЃС‚СЂРѕР№РєР° СЂР°Р·РґРµР»РѕРІ */
 #products h2 {
     font-size: 3em;
     padding-bottom: 20px;
@@ -196,7 +196,7 @@ header.fixed #logo {
     padding-bottom: 20px;
 }
 
-/* Блок карьеры */
+/* Р‘Р»РѕРє РєР°СЂСЊРµСЂС‹ */
 #career {
     padding: 100px 20%;
     width: 60%;
@@ -207,14 +207,14 @@ header.fixed #logo {
     font-size: 1.3em;
 }
 
-/* Настройка разделов */
+/* РќР°СЃС‚СЂРѕР№РєР° СЂР°Р·РґРµР»РѕРІ */
 #career h2 {
     font-size: 3em;
     padding-bottom: 20px;
 }
 #career span {color: #565656;}
 
-/* Блок с контактами */
+/* Р‘Р»РѕРє СЃ РєРѕРЅС‚Р°РєС‚Р°РјРё */
 #contacts {
     width: 100%;
     float: left;
@@ -247,7 +247,7 @@ header.fixed #logo {
     color: #2C8DBB;
 }
 
-/* Настройка полей для ввода контактов  */
+/* РќР°СЃС‚СЂРѕР№РєР° РїРѕР»РµР№ РґР»СЏ РІРІРѕРґР° РєРѕРЅС‚Р°РєС‚РѕРІ  */
 #input_form input {
     margin-bottom: 10px;
     width: 70%;
@@ -288,7 +288,7 @@ header.fixed #logo {
     background-color: #2c76a4;
 }
 
-/* окно авторизации */
+/* РѕРєРЅРѕ Р°РІС‚РѕСЂРёР·Р°С†РёРё */
 
 .hide {
     background: rgba(0, 0, 0, .5);
