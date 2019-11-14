@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Авторизация</title>
+    <script>setTimeout(function () {
+        window.location.href = "/DOTE_site/";
+    }, 3000);</script>
 </head>
 <body>
 <jsp:useBean id="mybean" scope="session" class="ru.nstu.forser.Authorisation" />
