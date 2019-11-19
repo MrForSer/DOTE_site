@@ -7,7 +7,7 @@
     }, 3000);</script>
 </head>
 <body>
-<jsp:useBean id="mybean" scope="session" class="ru.nstu.forser.Authorisation" />
+<jsp:useBean id="mybean" scope="session" class="ru.nstu.forser.User" />
 <jsp:setProperty name="mybean" property="login" />
 <jsp:setProperty name="mybean" property="password" />
 Добро пожаловать, <jsp:getProperty name="mybean" property="login" />. Авторизация прошла успешно.

@@ -1,11 +1,11 @@
 package ru.nstu.forser;
 
-public class Authorisation {
+public class User {
 
     private String login;
     private String password;
 
-    public Authorisation() {
+    public User() {
         login = null;
         password = null;
     }

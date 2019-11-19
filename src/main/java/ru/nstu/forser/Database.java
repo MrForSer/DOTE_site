@@ -8,6 +8,18 @@ import java.sql.Statement;
 
 public class Database {
 
+    public void createUser(User user){
+        //берем user.login и user.password, провер€ем, что такие еще не были зарегистрированы (приватным методом) и инстертим их в Ѕƒ
+    }
+
+    public void signIn(User user) throws SQLException {
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/dote", "postgres", "postgres")) {
+            try (Statement statement = connection.createStatement()) {
+
+            }
+        }
+    }
+/*
     public static boolean checkPassword(String login, String inputPassword){
         String realPassword = getPasswordFromDB(login);
         boolean check = false;
@@ -31,4 +43,6 @@ public class Database {
             e.printStackTrace();
         }
     }
+
+ */
 }
