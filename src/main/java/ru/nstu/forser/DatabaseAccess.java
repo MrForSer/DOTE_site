@@ -7,9 +7,9 @@ import java.sql.*;
 import java.util.*;
 import java.util.Date;
 
-public class Database {
+public class DatabaseAccess {
 
-    private static final Logger log = LoggerFactory.getLogger(Database.class);
+    private static final Logger log = LoggerFactory.getLogger(DatabaseAccess.class);
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/dote";
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "postgres";

@@ -23,12 +23,10 @@
         <a href="#" onclick="displayForm()" title="Авторизация">Авторизация</a>
     </div>
 </header>
-
 <div id="top">
     <h1>Development On The Edge</h1>
     <h3>Your source of innovative solutions</h3>
 </div>
-
 <article id="main">
     <div class="intro">
         <h2>Наши услуги помогут вам!</h2>
