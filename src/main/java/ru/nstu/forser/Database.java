@@ -18,8 +18,8 @@ public class Database {
         List<Employee> employees = new ArrayList<>();
         try {
             Class.forName("org.postgresql.Driver");
-            try (Connection con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
-                Statement statement = con.createStatement();
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+                Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
                 while (resultSet.next()) {
                     int id = resultSet.getInt(1);
@@ -31,7 +31,7 @@ public class Database {
                     Employee employee = new Employee(id, lastName, firstName, middleName, birthday, salary);
                     employees.add(employee);
                 }
-                con.close();
+                connection.close();
                 resultSet.close();
                 statement.close();
             }
@@ -45,10 +45,10 @@ public class Database {
         User user = null;
         try {
             Class.forName("org.postgresql.Driver");
-            try (Connection con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
 
-                String sql = "SELECT * FROM users WHERE id = ?";
-                try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
+                String query = "SELECT * FROM users WHERE id = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setInt(1, id);
                     ResultSet resultSet = preparedStatement.executeQuery();
                     if (resultSet.next()) {
@@ -58,7 +58,7 @@ public class Database {
                         user = new User(userId, login, password);
                     }
                     resultSet.close();
-                    con.close();
+                    connection.close();
                 }
             }
         } catch (Exception e) {
@@ -71,10 +71,10 @@ public class Database {
         User user = null;
         try {
             Class.forName("org.postgresql.Driver");
-            try (Connection con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
 
-                String sql = "SELECT password FROM users WHERE login = ?";
-                try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
+                String query = "SELECT password FROM users WHERE login = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setInt(1, id);
                     ResultSet resultSet = preparedStatement.executeQuery();
                     if (resultSet.next()) {
@@ -84,7 +84,7 @@ public class Database {
                         user = new User(userId, login, password);
                     }
                     resultSet.close();
-                    con.close();
+                    connection.close();
                 }
             }
         } catch (Exception e) {
@@ -96,10 +96,10 @@ public class Database {
     public int insertNewUser(User user) {
         try {
             Class.forName("org.postgresql.Driver");
-            try (Connection con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
 
-                String sql = "INSERT INTO users (login, password) VALUES (?, ?);";
-                try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
+                String query = "INSERT INTO users (login, password) VALUES (?, ?);";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                     preparedStatement.setString(2, user.getPassword());
                 }
@@ -113,9 +113,9 @@ public class Database {
     public int deleteUser(User user) {
         try {
             Class.forName("org.postgresql.Driver");
-            try (Connection con = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
-                String sql = "DELETE FROM users WHERE login = ?;";
-                try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+                String query = "DELETE FROM users WHERE login = ?;";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                 }
             }
