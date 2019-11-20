@@ -2,12 +2,19 @@ package ru.nstu.forser;
 
 public class User {
 
+    private int id;
     private String login;
     private String password;
 
-    public User() {
-        login = null;
-        password = null;
+    public User(int id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
     }
 
     public String getPassword() {
@@ -24,5 +31,13 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
