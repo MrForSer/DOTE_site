@@ -1,14 +1,10 @@
 package ru.nstu.forser.jdbc.web;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import ru.nstu.forser.bean.EmployeeBeanImpl;
-import ru.nstu.forser.bean.EmployeeBean;
 import ru.nstu.forser.jdbc.entity.Employee;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,13 +13,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.http.*;
 
 
 @WebServlet(name = "WebController", urlPatterns = {"/WebController"})
 public class WebController extends HttpServlet {
 
-    private static final Logger log = LoggerFactory.getLogger(WebController.class);
     private EmployeeBeanImpl employeeBean = new EmployeeBeanImpl();
     private Gson gson = new Gson();
 
@@ -51,7 +45,7 @@ public class WebController extends HttpServlet {
                 gson.toJson(employeeList, new TypeToken<ArrayList<Employee>>() {
                 }.getType(), response.getWriter());
             } catch (IOException e) {
-                log.error(e.getMessage());
+                e.getMessage();
             }
         } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
