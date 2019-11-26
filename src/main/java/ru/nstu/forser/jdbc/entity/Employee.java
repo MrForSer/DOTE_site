@@ -2,81 +2,71 @@ package ru.nstu.forser.jdbc.entity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 public class Employee {
-    public int getEmployee_Id() {
-        return Employee_Id;
+
+    private int employeeId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    private int salary;
+
+    public Employee(ResultSet resultSet) throws SQLException {
+        this.employeeId = resultSet.getInt(1);
+        this.firstName = resultSet.getString(2);
+        this.lastName = resultSet.getString(3);
+        this.email = resultSet.getString(4);
+        this.phoneNumber = resultSet.getString(5);
+        this.salary = resultSet.getInt(6);
     }
 
-    public void setEmployee_Id(int employee_Id) {
-        Employee_Id = employee_Id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public String getFirst_Name() {
-        return First_Name;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLast_Name() {
-        return Last_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getPhone_Number() {
-        return Phone_Number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_Number(String phone_Number) {
-        Phone_Number = phone_Number;
-    }
-
-    public String getJob_Id() {
-        return Job_Id;
-    }
-
-    public void setJob_Id(String job_Id) {
-        Job_Id = job_Id;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public int getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(int salary) {
-        Salary = salary;
-    }
-
-    private int Employee_Id;
-    private String First_Name;
-    private String Last_Name;
-    private String Email;
-    private String Phone_Number;
-    private String Job_Id;
-    private int Salary;
-
-    public Employee(ResultSet resultSet) throws SQLException {
-        this.Employee_Id = resultSet.getInt(1);
-        this.First_Name = resultSet.getString(2);
-        this.Last_Name = resultSet.getString(3);
-        this.Email = resultSet.getString(4);
-        this.Phone_Number = resultSet.getString(5);
-        this.Job_Id = resultSet.getString(6);
-        this.Salary = resultSet.getInt(7);
+        this.salary = salary;
     }
 
 

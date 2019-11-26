@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface EmployeeBean {
 
-    public List<Employee> getEmployees();
+    List<Employee> getEmployees();
 
 }
