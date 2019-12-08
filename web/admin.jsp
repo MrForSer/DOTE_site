@@ -8,7 +8,7 @@
     }, 300);</script>
 </head>
 <body>
-<jsp:useBean id="mybean" scope="session" class="ru.nstu.forser.User"/>
+<jsp:useBean id="mybean" scope="session" class="ru.nstu.forser.entities.User"/>
 <jsp:setProperty name="mybean" property="login"/>
 <jsp:setProperty name="mybean" property="password"/>
 Добро пожаловать,
