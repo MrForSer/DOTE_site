@@ -22,11 +22,11 @@ public class UserDAO {
             Class.forName(DRIVER);
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
                 try (Statement statement = connection.createStatement()) {
-                    try (ResultSet resultSet = statement.executeQuery("SELECT username, password FROM users")) {
+                    try (ResultSet resultSet = statement.executeQuery("SELECT login, password FROM users")) {
                         while (resultSet.next()) {
-                            String name = resultSet.getString(1);
+                            String login = resultSet.getString(1);
                             String password = resultSet.getString(2);
-                            User user = new User(name, password);
+                            User user = new User(login, password);
                             users.add(user);
                         }
                     }
@@ -38,19 +38,19 @@ public class UserDAO {
         return users;
     }
 
-    public User selectUserByName(String name) {
+    public User selectUserByName(String login) {
         User user = null;
         try {
             Class.forName(DRIVER);
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
 
-                String query = "SELECT * FROM users WHERE username = ?";
+                String query = "SELECT * FROM users WHERE login = ?";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                    preparedStatement.setString(1, name);
+                    preparedStatement.setString(1, login);
                     try (ResultSet resultSet = preparedStatement.executeQuery()) {
                         if (resultSet.next()) {
                             String password = resultSet.getString(2);
-                            user = new User(name, password);
+                            user = new User(login, password);
                         }
                     }
                 }
@@ -68,7 +68,7 @@ public class UserDAO {
             System.out.println("Драйвер получен");
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
                 System.out.println("Выполняем запрос");
-                String query = "INSERT INTO users (username, password) VALUES (?, ?);";
+                String query = "INSERT INTO users (login, password) VALUES (?, ?);";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                     preparedStatement.setString(2, user.getPassword());
@@ -88,9 +88,9 @@ public class UserDAO {
             Class.forName(DRIVER);
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
                 try (Statement statement = connection.createStatement()) {
-                    try (ResultSet resultSet = statement.executeQuery("SELECT username FROM users;")) {
+                    try (ResultSet resultSet = statement.executeQuery("SELECT firstname FROM users;")) {
                         while (resultSet.next()) {
-                            String name = resultSet.getString("name");
+                            String name = resultSet.getString("firstName");
                             System.out.println(name);
                             usernames.add(name);
                         }
@@ -107,7 +107,7 @@ public class UserDAO {
         try {
             Class.forName(DRIVER);
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
-                String query = "DELETE FROM users WHERE username = ?;";
+                String query = "DELETE FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                 }

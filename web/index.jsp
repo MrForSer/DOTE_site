@@ -159,9 +159,9 @@
 
 <div class="hide" id="hide"></div>
 <div class="loginForm" id="loginForm">
-    <form name="Форма авторизации" action="admin.jsp">
-        <input type="text" name="login" size="25"/>
-        <input type=password name=password size=25/>
+    <form name="Форма авторизации" action="auth.jsp">
+        <input type="text" name="firstName" size="25"/>
+        <input type="password" name="password" size=25/>
         <input type="submit" value="Войти">
         <input type="reset" value="Очистить форму">
     </form>
