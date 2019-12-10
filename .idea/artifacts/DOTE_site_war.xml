@@ -3,6 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/DOTE_site</output-path>
     <root id="archive" name="DOTE_site.war">
       <element id="artifact" artifact-name="DOTE_site:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.6" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

@@ -4,7 +4,7 @@
 <head>
     <title>Авторизация</title>
     <script>setTimeout(function () {
-        window.location.href = "/DOTE_site/admin";
+        window.location.href = location.href("/admin");
     }, 1000);</script>
 </head>
 <body>

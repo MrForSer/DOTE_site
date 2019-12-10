@@ -85,17 +85,18 @@ public class UserDAO {
     public List<String> getAllUsernames() {
         List<String> usernames = new ArrayList<>();
         try {
-            Class.forName(DRIVER);
+            Class.forName("org.postgresql.Driver");
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
-                try (Statement statement = connection.createStatement()) {
-                    try (ResultSet resultSet = statement.executeQuery("SELECT firstname FROM users;")) {
-                        while (resultSet.next()) {
-                            String name = resultSet.getString("firstName");
-                            System.out.println(name);
-                            usernames.add(name);
-                        }
-                    }
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT firstname FROM users;");
+                while (resultSet.next()) {
+                    String name = resultSet.getString(1);
+                    System.out.println(name);
+                    usernames.add(name);
                 }
+                connection.close();
+                resultSet.close();
+                statement.close();
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
