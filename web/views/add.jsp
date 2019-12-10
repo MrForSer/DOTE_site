@@ -1,43 +1,47 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add new user</title>
-    <link rel="stylesheet" href="styles/w3.css">
+    <title>Регистрация</title>
+    <link href="../css/service.css" rel="stylesheet">
+    <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+    <meta charset="UTF-8"/>
 </head>
 
-<body class="w3-light-grey">
-<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>DOTE 2.0</h1>
+<body>
+<div id="logo" onclick="slowScroll('#top')">
+    <h1>DevelopmentOnTheEdge</h1>
 </div>
+<div>
 
-<div class="w3-container w3-padding">
     <%
-        if (request.getAttribute("userName") != null) {
-            out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
-                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>User '" + request.getAttribute("userName") + "' added!</h5>\n" +
-                    "</div>");
+        if (request.getAttribute("login") != null) {
+            out.println("Пользователь " + request.getAttribute("login") + " зарегистрирован!" + System.lineSeparator());
         }
     %>
-    <div class="w3-card-4">
-        <div class="w3-container w3-center w3-green">
-            <h2>Add user</h2>
+    <div>
+        <div>
+            <h2>Регистрация</h2>
         </div>
-        <form method="post" class="w3-selection w3-light-grey w3-padding">
-            <label>Name:
-                <input type="text" name="name" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+        <form method="post">
+            <label>Логин:
+                <input type="text" name="login"><br/>
             </label>
-            <label>Password:
-                <input type="password" name="pass" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+            <label>Пароль:
+                <input type="password" name="password"><br/>
             </label>
-            <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
+            <label>Имя:
+                <input type="text" name="firstName"><br/>
+            </label>
+            <label>Фамилия:
+                <input type="text" name="lastName"><br/>
+            </label>
+            <button type="submit">Зарегистрироваться</button>
         </form>
     </div>
 </div>
 
-<div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-round-large" onclick="location.href='/'">Back to main</button>
+<div>
+    <button onclick="location.href='/'">На главную страницу</button>
 </div>
 </body>
 </html>

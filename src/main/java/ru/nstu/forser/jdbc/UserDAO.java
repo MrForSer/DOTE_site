@@ -16,18 +16,18 @@ public class UserDAO {
     private static final String DB_PASSWORD = "postgres";
     private static final String DRIVER = "org.postgresql.Driver";
 
-    public List<User> getListOfUsers() {
-        List<User> users = new ArrayList<>();
+    public String getUserName(String login){
+        String userName = null;
         try {
             Class.forName(DRIVER);
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
-                try (Statement statement = connection.createStatement()) {
-                    try (ResultSet resultSet = statement.executeQuery("SELECT login, password FROM users")) {
-                        while (resultSet.next()) {
-                            String login = resultSet.getString(1);
-                            String password = resultSet.getString(2);
-                            User user = new User(login, password);
-                            users.add(user);
+                String query = "SELECT userName FROM users WHERE login = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    preparedStatement.setString(1, login);
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            userName = resultSet.getString(1);
+                            return userName;
                         }
                     }
                 }
@@ -35,7 +35,31 @@ public class UserDAO {
         } catch (Exception e) {
             log.error(e.getMessage());
         }
-        return users;
+        return userName;
+    }
+
+    public static User findUser(String login, String password) {
+        User user = null;
+        try {
+            Class.forName(DRIVER);
+            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+                String query = "SELECT 1 FROM users WHERE login = ? AND password = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    preparedStatement.setString(1, login);
+                    preparedStatement.setString(2, password);
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5));
+                            return user;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return null;
+        }
+        return user;
     }
 
     public User selectUserByName(String login) {
@@ -68,17 +92,18 @@ public class UserDAO {
             System.out.println("Драйвер получен");
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
                 System.out.println("Выполняем запрос");
-                String query = "INSERT INTO users (login, password) VALUES (?, ?);";
+                String query = "INSERT INTO users (login, password, firstName, lastName) VALUES (?, ?, ?, ?);";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                     preparedStatement.setString(2, user.getPassword());
-                    System.out.println("Запрос " + query + " выполнен");
+                    preparedStatement.setString(3, user.getFirstName());
+                    preparedStatement.setString(4, user.getLastName());
                     preparedStatement.executeUpdate();
                 }
             }
         } catch (Exception e) {
-            System.out.println("Что-то пошло не так");
-            e.getMessage();
+            log.error("Что-то пошло не так");
+            log.error(e.getMessage());
         }
     }
 
@@ -88,18 +113,17 @@ public class UserDAO {
             Class.forName("org.postgresql.Driver");
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT firstname FROM users;");
+                ResultSet resultSet = statement.executeQuery("SELECT firstname, lastname FROM users;");
                 while (resultSet.next()) {
-                    String name = resultSet.getString(1);
-                    System.out.println(name);
-                    usernames.add(name);
+                    String fullName = new StringBuilder().append(resultSet.getString(1)).append(" ").append(resultSet.getString(2)).toString();
+                    usernames.add(fullName);
                 }
                 connection.close();
                 resultSet.close();
                 statement.close();
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
         }
         return usernames;
     }

@@ -15,10 +15,9 @@ public class ListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserDAO userDAO = new UserDAO();
-        List<String> usernames = userDAO.getAllUsernames();
-        System.out.println(usernames);
+        List<String> userNames = userDAO.getAllUsernames();
 
-        req.setAttribute("userNames", usernames);
+        req.setAttribute("userNames", userNames);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(req, resp);

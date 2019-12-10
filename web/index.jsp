@@ -1,5 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,8 @@
         <a href="#" onclick="slowScroll('#products')" title="Продукты">Продукты</a>
         <a href="#" onclick="slowScroll('#career')" title="Карьера">Карьера</a>
         <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+        <a href="#" onclick="location.href='/add'" title="Регистрация">Регистрация</a>
+        <a href="#" onclick="location.href='/list'" title="Сотрудники">Сотрудники</a>
         <a href="#" onclick="displayForm()" title="Авторизация">Авторизация</a>
     </div>
 </header>
@@ -160,7 +162,7 @@
 <div class="hide" id="hide"></div>
 <div class="loginForm" id="loginForm">
     <form name="Форма авторизации" action="auth.jsp">
-        <input type="text" name="firstName" size="25"/>
+        <input type="text" name="login" size="25"/>
         <input type="password" name="password" size=25/>
         <input type="submit" value="Войти">
         <input type="reset" value="Очистить форму">
@@ -173,7 +175,6 @@
     <p>E-mail: mr.forser@gmail.com</p>
 </footer>
 
-<!-- JQuery скрипт для медленного скроллинга на нужный раздел сайта при нажатии на ссылку -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="script.js"></script>
 </body>

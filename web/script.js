@@ -25,6 +25,7 @@ function validate() {
     var password = document.getElementById('password').value;
     if ((login == "admin") && (password == "admin")) {
         alert("Данные верны");
+        window.location.replace("done.jsp");
     } else if (login == "") {
         alert("Введите логин");
     } else if (password == "") {

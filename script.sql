@@ -9,3 +9,5 @@ INSERT INTO users (id, login, password, firstName, lastname) VALUES (DEFAULT, 's
 INSERT INTO users (id, login, password, firstName, lastname) VALUES (DEFAULT, 'xxx', '123', 'Петр', 'Волков');
 
 SELECT id, login, password, firstname, lastname FROM users;
+
+DELETE FROM users WHERE login is null;
