@@ -1,4 +1,4 @@
-<%@ page import="java.util.List" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,18 +15,23 @@
         <div>
             <h2>Пользователи</h2>
         </div>
-<%-- todo: можно ли это сделать bean-ом? --%>
-        <%
-            List<String> names = (List<String>) request.getAttribute("userNames");
+        <%-- Список пользователей на скриптлете: --%>
+        <%--        <%--%>
+        <%--            List<String> names = (List<String>) request.getAttribute("userNames");--%>
+        <%--            if (names != null && !names.isEmpty()) {--%>
+        <%--                out.println("<ui>");--%>
+        <%--                for (String name : names) {--%>
+        <%--                    out.println("<li>" + name + "</li>");--%>
+        <%--                }--%>
+        <%--                out.println("</ui>");--%>
+        <%--            } else out.println("<p>Пользователи не найдены</p>");--%>
+        <%--        %>--%>
 
-            if (names != null && !names.isEmpty()) {
-                out.println("<ui>");
-                for (String name : names) {
-                    out.println("<li>" + name + "</li>");
-                }
-                out.println("</ui>");
-            } else out.println("<p>Пользователи не найдены</p>");
-        %>
+        <%-- Список пользователей на useBean + JSTL       --%>
+        <jsp:useBean id="userNames" scope="request" type="java.util.List"/>
+        <c:forEach items="${userNames}" var="name">
+            ${name}<br>
+        </c:forEach>
     </div>
 </div>
 <div>

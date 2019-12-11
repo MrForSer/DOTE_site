@@ -11,5 +11,6 @@ SELECT id, login, password, firstname, lastName FROM users;
 SELECT * FROM users;
 
 DELETE FROM users WHERE login is null;
+DELETE FROM users WHERE id > 5;
 
 SHOW SERVER_ENCODING;
