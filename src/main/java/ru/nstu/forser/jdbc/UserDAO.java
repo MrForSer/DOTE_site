@@ -14,7 +14,6 @@ public class UserDAO {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/dote";
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "postgres";
-    private static final String DRIVER = "org.postgresql.Driver";
 
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
@@ -22,8 +21,7 @@ public class UserDAO {
 
     public void insertNewUser(User user) {
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 String query = "INSERT INTO users (login, password, firstName, lastName) VALUES (?, ?, ?, ?);";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
@@ -33,37 +31,35 @@ public class UserDAO {
                     preparedStatement.executeUpdate();
                 }
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             log.error("Произошла ошибка");
             log.error(e.getMessage());
         }
     }
 
     public List<String> getAllUsernames() {
-        List<String> usernames = new ArrayList<>();
+        List<String> userNames = new ArrayList<>();
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 try (Statement statement = connection.createStatement()) {
                     try (ResultSet resultSet = statement.executeQuery("SELECT firstname, lastname FROM users;")) {
                         while (resultSet.next()) {
-                            String fullName = new StringBuilder().append(resultSet.getString(1)).append(" ").append(resultSet.getString(2)).toString();
-                            usernames.add(fullName);
+                            String fullName = resultSet.getString(1) + " " + resultSet.getString(2);
+                            userNames.add(fullName);
                         }
                     }
                 }
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             log.error(e.getMessage());
         }
-        return usernames;
+        return userNames;
     }
 
     public String getUserName(String login) {
         String userName = null;
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 String query = "SELECT firstName FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, login);
@@ -84,8 +80,7 @@ public class UserDAO {
     public User selectUserByName(String login) {
         User user = null;
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 String query = "SELECT * FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, login);
@@ -97,7 +92,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             log.error(e.getMessage());
         }
         return user;
@@ -105,14 +100,13 @@ public class UserDAO {
 
     public int deleteUser(User user) {
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 String query = "DELETE FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                 }
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             log.error(e.getMessage());
         }
         return 0;
@@ -121,8 +115,7 @@ public class UserDAO {
     public User findUser(String login, String password) {
         User user = null;
         try {
-            Class.forName(DRIVER);
-            try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (Connection connection = getConnection()) {
                 String query = "SELECT 1 FROM users WHERE login = ? AND password = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, login);
@@ -135,7 +128,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             log.error(e.getMessage());
             return null;
         }
