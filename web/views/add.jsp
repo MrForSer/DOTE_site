@@ -39,7 +39,7 @@
 </div>
 
 <div>
-    <button onclick="location.href='/'">На главную страницу</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/'">На главную страницу</button>
 </div>
 </body>
 </html>
