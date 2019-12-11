@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!doctype html>
+<html lang="ru">
 <head>
     <title>Пользователи</title>
     <link href="../css/service.css" rel="stylesheet">
@@ -27,11 +28,14 @@
         <%--            } else out.println("<p>Пользователи не найдены</p>");--%>
         <%--        %>--%>
 
-        <%-- Список пользователей на useBean + JSTL       --%>
+        <%-- Список пользователей с использованием useBean + JSTL --%>
         <jsp:useBean id="userNames" scope="request" type="java.util.List"/>
-        <c:forEach items="${userNames}" var="name">
-            ${name}<br>
-        </c:forEach>
+        <ul>
+            <c:forEach items="${userNames}" var="name">
+                <li>${name}</li>
+            </c:forEach>
+        </ul>
+        <br>
     </div>
 </div>
 <div>

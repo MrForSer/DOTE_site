@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!doctype html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -21,8 +22,10 @@
         <a href="#" onclick="slowScroll('#career')" title="Карьера">Карьера</a>
         <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
         <a href="#" onclick="displayForm()" title="Приветствие">Приветствие</a>
-        <a href="${pageContext.request.contextPath}/add" onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация">Регистрация</a>
-        <a href="${pageContext.request.contextPath}/list" onclick="location.href='${pageContext.request.contextPath}/add'" title="Сотрудники">Сотрудники</a>
+        <a href="${pageContext.request.contextPath}/add"
+           onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация">Регистрация</a>
+        <a href="${pageContext.request.contextPath}/list"
+           onclick="location.href='${pageContext.request.contextPath}/add'" title="Сотрудники">Сотрудники</a>
     </div>
 </header>
 <div id="top">
