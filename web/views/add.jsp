@@ -4,14 +4,12 @@
 <html lang="ru">
 <head>
     <title>Регистрация</title>
-    <link href="../css/service.css" rel="stylesheet">
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
-
 <body>
-<div id="logo" onclick="slowScroll('#top')">
+<header>
     <h1>DevelopmentOnTheEdge</h1>
-</div>
+</header>
 <div>
     <%
         if (request.getAttribute("login") != null) {
@@ -24,22 +22,21 @@
         </div>
         <form method="post">
             <label>Логин:
-                <input type="text" name="login"><br/>
+                <input type="text" name="login"><br>
             </label>
             <label>Пароль:
-                <input type="password" name="password"><br/>
+                <input type="password" name="password"><br>
             </label>
             <label>Имя:
-                <input type="text" name="firstName"><br/>
+                <input type="text" name="firstName"><br>
             </label>
             <label>Фамилия:
-                <input type="text" name="lastName"><br/>
+                <input type="text" name="lastName"><br>
             </label>
-            <button type="submit">Зарегистрироваться</button>
+            <button type="submit">Зарегистрироваться</button><br>
         </form>
     </div>
 </div>
-
 <div>
     <button onclick="location.href='${pageContext.request.contextPath}/'">На главную страницу</button>
 </div>

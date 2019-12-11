@@ -4,13 +4,12 @@
 <html lang="ru">
 <head>
     <title>Пользователи</title>
-    <link href="../css/service.css" rel="stylesheet">
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
-<div>
+<header>
     <h1>DevelopmentOnTheEdge</h1>
-</div>
+</header>
 <div>
     <div>
         <div>
