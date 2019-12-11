@@ -4,7 +4,7 @@
 <head>
     <title>Авторизация</title>
     <script>setTimeout(function () {
-        window.location.href = "/DOTE_site";
+        window.location.href = "${pageContext.request.contextPath}/";
     }, 1000);</script>
 </head>
 <body>
