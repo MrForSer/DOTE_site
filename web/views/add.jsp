@@ -4,7 +4,6 @@
     <title>Регистрация</title>
     <link href="../css/service.css" rel="stylesheet">
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
-    <meta charset="UTF-8"/>
 </head>
 
 <body>
@@ -12,7 +11,6 @@
     <h1>DevelopmentOnTheEdge</h1>
 </div>
 <div>
-
     <%
         if (request.getAttribute("login") != null) {
             out.println("Пользователь " + request.getAttribute("login") + " зарегистрирован!" + System.lineSeparator());

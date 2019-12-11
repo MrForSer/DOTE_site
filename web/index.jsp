@@ -20,9 +20,9 @@
         <a href="#" onclick="slowScroll('#products')" title="Продукты">Продукты</a>
         <a href="#" onclick="slowScroll('#career')" title="Карьера">Карьера</a>
         <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+        <a href="#" onclick="displayForm()" title="Приветствие">Приветствие</a>
         <a href="#" onclick="location.href='/add'" title="Регистрация">Регистрация</a>
         <a href="#" onclick="location.href='/list'" title="Сотрудники">Сотрудники</a>
-        <a href="#" onclick="displayForm()" title="Авторизация">Авторизация</a>
     </div>
 </header>
 <div id="top">
@@ -161,7 +161,7 @@
 
 <div class="hide" id="hide"></div>
 <div class="loginForm" id="loginForm">
-    <form name="Форма авторизации" action="auth.jsp">
+    <form name="Форма авторизации" action="views/welcome.jsp">
         <input type="text" name="login" size="25"/>
         <input type="password" name="password" size=25/>
         <input type="submit" value="Войти">

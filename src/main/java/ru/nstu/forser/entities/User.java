@@ -7,6 +7,7 @@ public class User {
     private String firstName;
     private String lastName;
 
+    // необходимо для useBean, не удалять
     public User() {
         this.firstName = null;
     }
@@ -31,15 +32,6 @@ public class User {
         this.lastName = lastName;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -60,15 +52,15 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

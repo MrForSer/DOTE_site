@@ -4,15 +4,15 @@
 <head>
     <title>Авторизация</title>
     <script>setTimeout(function () {
-        window.location.href = location.href("/");
+        window.location.href = "/DOTE_site";
     }, 1000);</script>
 </head>
 <body>
-<jsp:useBean id="userDAOBean" scope="session" class="ru.nstu.forser.jdbc.UserDAO"/>
+<jsp:useBean id="userBean" scope="session" class="ru.nstu.forser.entities.User"/>
 <jsp:setProperty name="userBean" property="login"/>
 <jsp:setProperty name="userBean" property="password"/>
 Добро пожаловать,
 <jsp:getProperty name="userBean" property="login"/>
-. Авторизация прошла успешно.
+. Мы рады вас снова видеть!
 </body>
 </html>

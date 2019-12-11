@@ -15,6 +15,7 @@
         <div>
             <h2>Пользователи</h2>
         </div>
+<%-- todo: можно ли это сделать bean-ом? --%>
         <%
             List<String> names = (List<String>) request.getAttribute("userNames");
 
