@@ -40,9 +40,12 @@ H
 script.sql,a\f\af754803463001925ab886a22d501c00448532b2
 9
 	readme.md,2\7\275d783e298228506068436512433d343feb52aa
-?
-web/welcome.jsp,e\c\ec934eeb20e1b461d1a50d83a34de3a6021cb5bc
 B
 web/views/list.jsp,e\2\e2d9b6772a4770e12d09c50893e6a2803484f83d
 A
 web/views/add.jsp,3\f\3fe8fd958631e84337d5b4e210ae6696fa6688e2
+E
+web/views/welcome.jsp,1\f\1f6df1f37c52099bbb8ac87162535e03adced7f3
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
