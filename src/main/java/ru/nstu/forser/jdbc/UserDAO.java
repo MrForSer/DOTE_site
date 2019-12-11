@@ -14,6 +14,7 @@ public class UserDAO {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/dote";
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "postgres";
+    private static final String DRIVER = "org.postgresql.Driver";
 
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
@@ -21,6 +22,7 @@ public class UserDAO {
 
     public void insertNewUser(User user) {
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 String query = "INSERT INTO users (login, password, firstName, lastName) VALUES (?, ?, ?, ?);";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -31,15 +33,16 @@ public class UserDAO {
                     preparedStatement.executeUpdate();
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error("Произошла ошибка");
             log.error(e.getMessage());
         }
     }
 
-    public List<String> getAllUsernames() {
+    public List<String> getAllUserNames() {
         List<String> userNames = new ArrayList<>();
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 try (Statement statement = connection.createStatement()) {
                     try (ResultSet resultSet = statement.executeQuery("SELECT firstname, lastname FROM users;")) {
@@ -50,7 +53,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error(e.getMessage());
         }
         return userNames;
@@ -59,6 +62,7 @@ public class UserDAO {
     public String getUserName(String login) {
         String userName = null;
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 String query = "SELECT firstName FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -71,7 +75,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error(e.getMessage());
         }
         return userName;
@@ -80,6 +84,7 @@ public class UserDAO {
     public User selectUserByName(String login) {
         User user = null;
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 String query = "SELECT * FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -92,7 +97,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error(e.getMessage());
         }
         return user;
@@ -100,13 +105,14 @@ public class UserDAO {
 
     public int deleteUser(User user) {
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 String query = "DELETE FROM users WHERE login = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, user.getLogin());
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error(e.getMessage());
         }
         return 0;
@@ -115,6 +121,7 @@ public class UserDAO {
     public User findUser(String login, String password) {
         User user = null;
         try {
+            Class.forName(DRIVER);
             try (Connection connection = getConnection()) {
                 String query = "SELECT 1 FROM users WHERE login = ? AND password = ?;";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -128,7 +135,7 @@ public class UserDAO {
                     }
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             log.error(e.getMessage());
             return null;
         }
