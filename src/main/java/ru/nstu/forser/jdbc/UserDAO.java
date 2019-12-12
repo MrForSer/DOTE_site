@@ -58,4 +58,28 @@ public class UserDAO {
         }
         return userNames;
     }
+
+    public static User findUser(String login, String password) {
+        User user = null;
+        try {
+            Class.forName(DRIVER);
+            try (Connection connection = getConnection()) {
+                String query = "SELECT * FROM users WHERE login = ? AND password = ?;";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    preparedStatement.setString(1, login);
+                    preparedStatement.setString(2, password);
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5));
+                            return user;
+                        }
+                    }
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            log.error(e.getMessage());
+            return null;
+        }
+        return user;
+    }
 }

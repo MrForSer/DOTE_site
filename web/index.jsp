@@ -21,7 +21,7 @@
         <a href="#" onclick="slowScroll('#products')" title="Продукты">Продукты</a>
         <a href="#" onclick="slowScroll('#career')" title="Карьера">Карьера</a>
         <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
-        <a href="#" onclick="displayForm()" title="Приветствие">Приветствие</a>
+        <a href="#" onclick="displayForm()" title="Вход">Вход</a>
         <a href="${pageContext.request.contextPath}/add"
            onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация">Регистрация</a>
         <a href="${pageContext.request.contextPath}/list"
