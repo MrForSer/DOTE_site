@@ -25,7 +25,7 @@
         <a href="${pageContext.request.contextPath}/add"
            onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация">Регистрация</a>
         <a href="${pageContext.request.contextPath}/list"
-           onclick="location.href='${pageContext.request.contextPath}/add'" title="Пользователи">Пользователи</a>
+           onclick="location.href='${pageContext.request.contextPath}/list'" title="Пользователи">Пользователи</a>
     </div>
 </header>
 <div id="top">
