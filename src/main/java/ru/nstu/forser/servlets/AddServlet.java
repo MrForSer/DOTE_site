@@ -2,6 +2,7 @@ package ru.nstu.forser.servlets;
 
 import ru.nstu.forser.entities.User;
 import ru.nstu.forser.jdbc.UserDAO;
+import ru.nstu.forser.jdbc.UserDAOImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,7 +30,7 @@ public class AddServlet extends HttpServlet {
         String lastName = req.getParameter("lastName");
 
         User user = new User(login, password, firstName, lastName);
-        UserDAO userDAO = new UserDAO();
+        UserDAO userDAO = new UserDAOImpl();
         userDAO.insertNewUser(user);
 
         req.setAttribute("login", login);

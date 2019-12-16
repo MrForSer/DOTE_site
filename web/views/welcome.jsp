@@ -1,5 +1,5 @@
-<%@ page import="ru.nstu.forser.jdbc.UserDAO" %>
 <%@ page import="ru.nstu.forser.entities.User" %>
+<%@ page import="ru.nstu.forser.jdbc.UserDAO" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>

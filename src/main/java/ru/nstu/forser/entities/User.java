@@ -1,10 +1,24 @@
 package ru.nstu.forser.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users", schema = "public")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "login", unique = true, nullable = false)
     private String login;
+
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "firstName")
     private String firstName;
+
+    @Column(name = "firstName")
     private String lastName;
 
     // необходимо для useBean, не удалять
