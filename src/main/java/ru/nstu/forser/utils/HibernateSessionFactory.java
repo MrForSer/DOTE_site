@@ -6,10 +6,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import ru.nstu.forser.entities.User;
 
-public class HibernateSessionFactoryUtil {
+public class HibernateSessionFactory {
     private static SessionFactory sessionFactory;
 
-    private HibernateSessionFactoryUtil() {
+    private HibernateSessionFactory() {
     }
 
     public static SessionFactory getSessionFactory() {
@@ -17,9 +17,10 @@ public class HibernateSessionFactoryUtil {
             try {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(User.class);
-                ServiceRegistry builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+                ServiceRegistry builder = new StandardServiceRegistryBuilder()
+                        .applySettings(configuration.getProperties())
+                        .build();
                 sessionFactory = configuration.buildSessionFactory(builder);
-
             } catch (Exception e) {
                 System.out.println("Исключение!" + e);
             }
