@@ -10,30 +10,10 @@ import java.util.List;
 
 public class UserDAO {
 
-    public User findById(int id) {
-        return HibernateSessionFactory.getSessionFactory().openSession().get(User.class, id);
-    }
-
     public void save(User user) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.save(user);
-        transaction.commit();
-        session.close();
-    }
-
-    public void update(User user) {
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(user);
-        transaction.commit();
-        session.close();
-    }
-
-    public void delete(User user) {
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.delete(user);
         transaction.commit();
         session.close();
     }
@@ -61,4 +41,25 @@ public class UserDAO {
         }
         return user;
     }
+
+    public User findById(int id) {
+        return HibernateSessionFactory.getSessionFactory().openSession().get(User.class, id);
+    }
+
+    public void update(User user) {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(user);
+        transaction.commit();
+        session.close();
+    }
+
+    public void delete(User user) {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(user);
+        transaction.commit();
+        session.close();
+    }
+
 }
