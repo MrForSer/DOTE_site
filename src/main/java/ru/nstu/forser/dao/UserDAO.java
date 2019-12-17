@@ -2,16 +2,10 @@ package ru.nstu.forser.dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.CriteriaQuery;
 import ru.nstu.forser.entities.User;
 import ru.nstu.forser.utils.HibernateSessionFactory;
 
-import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.ParameterExpression;
-import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class UserDAO {
