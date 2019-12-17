@@ -30,7 +30,7 @@ public class AddServlet extends HttpServlet {
 
         User user = new User(login, password, firstName, lastName);
         UserDAO userDAO = new UserDAO();
-        userDAO.insertNewUser(user);
+        userDAO.save(user);
 
         req.setAttribute("login", login);
         doGet(req, resp);

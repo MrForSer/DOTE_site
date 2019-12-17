@@ -1,6 +1,12 @@
 package ru.nstu.forser.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String login;
     private String password;
@@ -56,6 +62,10 @@ public class User {
         return lastName;
     }
 
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     public int getId() {
         return id;
     }
@@ -63,4 +73,5 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+
 }
