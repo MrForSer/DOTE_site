@@ -1,7 +1,7 @@
 package ru.nstu.forser.servlets;
 
 import ru.nstu.forser.entities.User;
-import ru.nstu.forser.jdbc.UserDAO;
+import ru.nstu.forser.dao.UserDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

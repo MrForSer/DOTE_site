@@ -1,4 +1,4 @@
-<%@ page import="ru.nstu.forser.jdbc.UserDAO" %>
+<%@ page import="ru.nstu.forser.dao.UserDAO" %>
 <%@ page import="ru.nstu.forser.entities.User" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -15,7 +15,8 @@
 <jsp:setProperty name="userBean" property="login"/>
 <jsp:setProperty name="userBean" property="password"/>
 <%
-    User user = UserDAO.findUser(userBean.getLogin(), userBean.getPassword());
+    UserDAO userDAO = new UserDAO();
+    User user = userDAO.findUser(userBean.getLogin(), userBean.getPassword());
     if (user != null) {
         out.println("Здравствуйте, " + user.getFirstName() + " " + user.getLastName() + "!" + System.lineSeparator());
     } else {

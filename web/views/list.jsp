@@ -15,19 +15,6 @@
         <div>
             <h2>Пользователи</h2>
         </div>
-        <%-- Список пользователей на скриптлете: --%>
-        <%--        <%--%>
-        <%--            List<String> names = (List<String>) request.getAttribute("userNames");--%>
-        <%--            if (names != null && !names.isEmpty()) {--%>
-        <%--                out.println("<ui>");--%>
-        <%--                for (String name : names) {--%>
-        <%--                    out.println("<li>" + name + "</li>");--%>
-        <%--                }--%>
-        <%--                out.println("</ui>");--%>
-        <%--            } else out.println("<p>Пользователи не найдены</p>");--%>
-        <%--        %>--%>
-
-        <%-- Список пользователей с использованием useBean + JSTL --%>
         <jsp:useBean id="userNames" scope="request" type="java.util.List"/>
         <ul>
             <c:forEach items="${userNames}" var="name">
