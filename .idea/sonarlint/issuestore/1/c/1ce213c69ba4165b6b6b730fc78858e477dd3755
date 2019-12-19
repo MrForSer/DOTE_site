@@ -1,0 +1,8 @@
+
+hsquid:UselessImportCheck"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8Åž‹×ñ-
+isquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(Œòç‰8ç°ùÖñ-
+isquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(Í–êþ8ç°ùÖñ-
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Åž‹×ñ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÈÊªÑ8ç°ùÖñ-
+nsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(È‚îùþÿÿÿÿ8ç°ùÖñ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ûòÏæ8ç°ùÖñ-
