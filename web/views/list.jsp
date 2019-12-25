@@ -3,22 +3,22 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <title>Пользователи</title>
+    <title>Сотрудники</title>
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <header>
-    <h1>DevelopmentOnTheEdge</h1>
+    <h1>SalaryProject</h1>
 </header>
 <div>
     <div>
         <div>
-            <h2>Пользователи</h2>
+            <h2>Сотрудники</h2>
         </div>
-        <jsp:useBean id="userNames" scope="request" type="java.util.List"/>
+        <jsp:useBean id="employeesData" scope="request" type="java.util.List"/>
         <ul>
-            <c:forEach items="${userNames}" var="name">
-                <li>${name}</li>
+            <c:forEach items="${employeesData}" var="empData">
+                <li>${empData}</li>
             </c:forEach>
         </ul>
         <br>

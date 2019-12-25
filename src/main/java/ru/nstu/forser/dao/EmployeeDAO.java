@@ -2,64 +2,62 @@ package ru.nstu.forser.dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import ru.nstu.forser.entities.User;
+import ru.nstu.forser.entities.Employee;
 import ru.nstu.forser.utils.HibernateSessionFactory;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
-public class UserDAO {
+public class EmployeeDAO {
 
-    public void save(User user) {
+    public void save(Employee employee) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        session.save(user);
+        session.save(employee);
         transaction.commit();
         session.close();
     }
 
     @SuppressWarnings("unchecked")
-    public List<User> findAllUsers() {
-        return (List<User>) HibernateSessionFactory
+    public List<Employee> findAllEmployees() {
+        return (List<Employee>) HibernateSessionFactory
                 .getSessionFactory()
                 .openSession()
-                .createQuery("FROM User")
+                .createQuery("FROM Employee")
                 .list();
     }
 
-    public User findUser(String login, String password) {
-        User user = null;
+    public Employee findEmployee(String lastName) {
+        Employee employee = null;
         try {
-            user = (User) HibernateSessionFactory
+            employee = (Employee) HibernateSessionFactory
                     .getSessionFactory()
                     .openSession()
-                    .createQuery("FROM User WHERE login = :login AND password = :password")
-                    .setParameter("login", login)
-                    .setParameter("password", password)
+                    .createQuery("FROM User WHERE lastName = :lastName")
+                    .setParameter("lastName", lastName)
                     .getSingleResult();
         } catch (NoResultException ignore) {
         }
-        return user;
+        return employee;
     }
 
-    public User findById(int id) {
-        return HibernateSessionFactory.getSessionFactory().openSession().get(User.class, id);
+    public Employee findById(int id) {
+        return HibernateSessionFactory.getSessionFactory().openSession().get(Employee.class, id);
     }
 
-    public void update(User user) {
+    public void update(Employee employee) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        session.update(user);
+        session.update(employee);
         transaction.commit();
         session.close();
     }
 
-    public void delete(User user) {
+    public void delete(Employee employee) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(user);
+        session.delete(employee);
         transaction.commit();
         session.close();
     }
-
 }

@@ -12,6 +12,7 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private String role;
 
     // необходимо для useBean, не удалять
     public User() {
@@ -36,6 +37,14 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getLogin() {

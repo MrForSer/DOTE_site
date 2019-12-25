@@ -1,5 +1,7 @@
 package ru.nstu.forser.servlets;
 
+import ru.nstu.forser.dao.EmployeeDAO;
+import ru.nstu.forser.entities.Employee;
 import ru.nstu.forser.entities.User;
 import ru.nstu.forser.dao.UserDAO;
 
@@ -16,13 +18,13 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        UserDAO userDAO = new UserDAO();
+        EmployeeDAO employeeDAO = new EmployeeDAO();
 
-        List<User> users = userDAO.findAll();
-        List<String> userNames = users.stream()
-                .map(User::getFullName)
+        List<Employee> employees = employeeDAO.findAllEmployees();
+        List<String> employeesData = employees.stream()
+                .map(Employee::getEmployeeData)
                 .collect(Collectors.toList());
-        req.setAttribute("userNames", userNames);
+        req.setAttribute("employeesData", employeesData);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(req, resp);

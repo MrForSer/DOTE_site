@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import ru.nstu.forser.entities.Employee;
 import ru.nstu.forser.entities.User;
 
 public class HibernateSessionFactory {
@@ -17,6 +18,7 @@ public class HibernateSessionFactory {
             try {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(User.class);
+                configuration.addAnnotatedClass(Employee.class);
                 ServiceRegistry builder = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties())
                         .build();

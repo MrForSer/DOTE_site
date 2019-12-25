@@ -125,7 +125,7 @@ header.fixed #logo {
 /* background-blend-mode для наложения цвета на картинку */
 #top {
     width: 100%;
-    background-image: url(../images/mackbook-on-table-showcase.jpg);
+    background-image: url(../images/1.jpg);
     background-blend-mode: multiply;
     background-color: #676e73;
     background-size: cover;
