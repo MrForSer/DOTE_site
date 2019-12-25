@@ -26,8 +26,15 @@ public class Employee {
         this.rank = rank;
     }
 
+    public Employee(String lastName, String department, Integer salary, Integer rank) {
+        this.lastName = lastName;
+        this.department = department;
+        this.salary = salary;
+        this.rank = rank;
+    }
+
     public String getEmployeeData() {
-        return  "Фамилия: " + lastName + " Цех: " + department + " Зарплата: " + salary + " Разряд: " + rank;
+        return "Фамилия: " + lastName + " Цех: " + department + " Зарплата: " + salary + " Разряд: " + rank;
     }
 
     public int getId() {

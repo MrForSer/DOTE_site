@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <h1>DevelopmentOnTheEdge</h1>
+    <h1>SalaryProject</h1>
 </header>
 <div>
     <%

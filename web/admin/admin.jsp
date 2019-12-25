@@ -17,9 +17,12 @@
         <span>Salary Project</span>
     </div>
     <div id="about">
-        <a href="${pageContext.request.contextPath}/add"
-           onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация пользователя">Регистрация
-            пользователя</a>
+        <a href="${pageContext.request.contextPath}/addUser"
+           onclick="location.href='${pageContext.request.contextPath}/addUser'"
+           title="Регистрация пользователя">Регистрация пользователя</a>
+        <a href="${pageContext.request.contextPath}/addEmployee"
+           onclick="location.href='${pageContext.request.contextPath}/addEmployee'"
+           title="Добавить работника">Добавить работника</a>
         <a href="${pageContext.request.contextPath}/adminList"
            onclick="location.href='${pageContext.request.contextPath}/adminList'" title="Список работников">Список
             работников</a>

@@ -23,7 +23,7 @@ public class EmployeeDAO {
         return (List<Employee>) HibernateSessionFactory
                 .getSessionFactory()
                 .openSession()
-                .createQuery("FROM Employee")
+                .createQuery("FROM Employee ORDER BY lastName")
                 .list();
     }
 
@@ -33,7 +33,7 @@ public class EmployeeDAO {
             employee = (Employee) HibernateSessionFactory
                     .getSessionFactory()
                     .openSession()
-                    .createQuery("FROM User WHERE lastName = :lastName")
+                    .createQuery("FROM Employee WHERE lastName = :lastName")
                     .setParameter("lastName", lastName)
                     .getSingleResult();
         } catch (NoResultException ignore) {

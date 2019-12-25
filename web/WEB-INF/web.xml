@@ -8,12 +8,21 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>add</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.AddServlet</servlet-class>
+        <servlet-name>addUser</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.AddUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>addUser</servlet-name>
+        <url-pattern>/addUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addEmployee</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.AddEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addEmployee</servlet-name>
+        <url-pattern>/addEmployee</url-pattern>
     </servlet-mapping>
 
     <servlet>
