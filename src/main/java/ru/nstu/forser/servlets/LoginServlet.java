@@ -21,7 +21,6 @@ public class LoginServlet extends HttpServlet {
 
         if (user != null) {
             session.setAttribute("userBean", user);
-            // todo: убрать лишнее
             session.setAttribute("Name", user.getFirstName() + " " + user.getLastName());
             if (user.getRole().equals("admin")) {
                 resp.sendRedirect("/admin");

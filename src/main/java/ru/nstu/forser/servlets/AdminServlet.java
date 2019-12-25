@@ -10,7 +10,7 @@ import java.io.IOException;
 public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/admin.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("admin/admin.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
