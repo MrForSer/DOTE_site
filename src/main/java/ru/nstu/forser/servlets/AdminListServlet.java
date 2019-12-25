@@ -20,11 +20,6 @@ public class AdminListServlet extends HttpServlet {
         List<Employee> employees = employeeDAO.findAllEmployees();
         req.setAttribute("employees", employees);
 
-//        List<String> employeesData = employees.stream()
-//                .map(Employee::getEmployeeData)
-//                .collect(Collectors.toList());
-//        req.setAttribute("employeesData", employeesData);
-
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/admin/adminList.jsp");
         requestDispatcher.forward(req, resp);
     }

@@ -1,7 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@page import="ru.nstu.forser.dao.EmployeeDAO" %>
-<jsp:useBean id="employee" class="ru.nstu.forser.entities.Employee"></jsp:useBean>
-<jsp:setProperty property="*" name="user"/>
+<jsp:useBean id="employee" class="ru.nstu.forser.entities.Employee">
+    <jsp:setProperty property="*" name="employee"/>
+</jsp:useBean>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -16,7 +18,7 @@
 <%
     EmployeeDAO employeeDAO = new EmployeeDAO();
     employeeDAO.update(employee);
-    response.sendRedirect(request.getContextPath() + "/adminList.jsp");
+    response.sendRedirect(request.getContextPath() + "/adminList");
 %>
 </body>
 </html>

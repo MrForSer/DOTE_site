@@ -20,7 +20,6 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // задаем базовую кодировку, без нее будет ISO-8859-1 - русские буквы станут кракозябрами
         req.setCharacterEncoding("UTF8");
 
         String login = req.getParameter("login");

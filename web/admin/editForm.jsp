@@ -12,8 +12,8 @@
 </head>
 <body>
 <%
-    EmployeeDAO employeeDAO = new EmployeeDAO();
     String id = request.getParameter("id");
+    EmployeeDAO employeeDAO = new EmployeeDAO();
     Employee employee = employeeDAO.findById(Integer.parseInt(id));
 %>
 <h1>Редактировать сотрудника</h1>
@@ -39,7 +39,6 @@
             <td>Разряд:</td>
             <td>
                 <input type="number" name="rank" value="<%= employee.getRank()%>"/></td>
-            </td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="Редактировать сотрудника"/></td>
