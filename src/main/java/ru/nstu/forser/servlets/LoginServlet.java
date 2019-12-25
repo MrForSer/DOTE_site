@@ -6,7 +6,10 @@ import ru.nstu.forser.entities.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
@@ -23,9 +26,9 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userBean", user);
             session.setAttribute("Name", user.getFirstName() + " " + user.getLastName());
             if (user.getRole().equals("admin")) {
-                resp.sendRedirect("/admin");
+                resp.sendRedirect(req.getContextPath() + "/admin/admin.jsp");
             } else {
-                resp.sendRedirect("/user");
+                resp.sendRedirect(req.getContextPath() + "/user/user.jsp");
             }
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/notFound.jsp");
