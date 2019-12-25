@@ -33,13 +33,19 @@
             <label>Фамилия:
                 <input type="text" name="lastName"><br>
             </label>
-            <button type="submit">Зарегистрировать</button><br>
-<%--            todo: добавить тут роль --%>
+            <label>Роль:
+                <select name="role">
+                    <option value="admin">Администратор</option>
+                    <option value="user">Пользователь</option>
+                </select><br>
+            </label>
+            <button type="submit">Зарегистрировать</button>
+            <br>
         </form>
     </div>
 </div>
 <div>
-    <button onclick="location.href='${pageContext.request.contextPath}/admin'">В админку</button>
+    <button onclick="history.back()">Назад</button>
 </div>
 </body>
 </html>

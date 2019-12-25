@@ -25,7 +25,7 @@
     </div>
 </div>
 <div>
-    <button onclick="location.href='${pageContext.request.contextPath}/'">На главную страницу</button>
+    <button onclick="history.back()">Назад</button>
 </div>
 </body>
 </html>

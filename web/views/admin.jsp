@@ -8,8 +8,8 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Администратор</title>
-    <link href="css/main.css" rel="stylesheet">
-    <link href="images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -18,13 +18,12 @@
     </div>
     <div id="about">
         <a href="${pageContext.request.contextPath}/add"
-           onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация">Регистрация</a>
+           onclick="location.href='${pageContext.request.contextPath}/add'" title="Регистрация пользователя">Регистрация пользователя</a>
         <a href="${pageContext.request.contextPath}/list"
-           onclick="location.href='${pageContext.request.contextPath}/list'" title="Сотрудники">Сотрудники</a>
+           onclick="location.href='${pageContext.request.contextPath}/list'" title="Список работников">Список работников</a>
     </div>
 </header>
 <div id="top">
-    <h1>Administrator page</h1>
 </div>
 <footer>
     <p>Copyright by Лагунов Сергей</p>
@@ -33,6 +32,6 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>
