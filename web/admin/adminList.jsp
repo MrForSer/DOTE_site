@@ -15,7 +15,6 @@
         <div>
             <h2>Сотрудники</h2>
         </div>
-        <%--        <jsp:useBean id="employeesData" scope="request" type="java.util.List"/>--%>
         <jsp:useBean id="employees" scope="request" type="java.util.List"/>
         <table border="1">
             <tr>
@@ -39,31 +38,12 @@
                 </tr>
             </c:forEach>
         </table>
-
-        <%--        <ul>--%>
-        <%--            <c:forEach items="${employeesData}" var="empData">--%>
-        <%--                <li>${empData}</li>--%>
-        <%--                <div id="edit">--%>
-        <%--                    <a href="#" onclick="displayUpdateForm()" title="Редактировать">Редактировать</a>--%>
-        <%--                </div>--%>
-        <%--            </c:forEach>--%>
-        <%--        </ul>--%>
         <br>
     </div>
 </div>
 <div>
     <button onclick="history.back()">Назад</button>
 </div>
-<%--<div class="hide" id="hide"></div>--%>
-<%--<div class="updateForm" id="updateForm">--%>
-<%--    <form name="Форма редактирования" action="update">--%>
-<%--        <input type="text" name="login" size="25"/>--%>
-<%--        <input type="password" name="password" size=25/>--%>
-
-<%--        <input type="submit" value="Войти">--%>
-<%--        <input type="reset" value="Очистить форму">--%>
-<%--    </form>--%>
-<%--</div>--%>
 <script src="../script.js"></script>
 </body>
 </html>

@@ -340,3 +340,8 @@ footer {
     color: #484848;
     font-size: 0.8em;
 }
+
+table.employees, .employees td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

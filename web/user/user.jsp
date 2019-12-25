@@ -1,5 +1,3 @@
-<%@ page import="ru.nstu.forser.dao.UserDAO" %>
-<%@ page import="ru.nstu.forser.entities.User" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
@@ -19,8 +17,8 @@
         <span>Salary Project</span>
     </div>
     <div id="about">
-        <a href="${pageContext.request.contextPath}/list"
-           onclick="location.href='${pageContext.request.contextPath}/list'"
+        <a href="${pageContext.request.contextPath}/userList"
+           onclick="location.href='${pageContext.request.contextPath}/userList'"
            title="Список сотрудников">Список сотрудников</a>
         <a href="${pageContext.request.contextPath}/logout"
            onclick="location.href='${pageContext.request.contextPath}/logout'" title="Выход">Выход</a>

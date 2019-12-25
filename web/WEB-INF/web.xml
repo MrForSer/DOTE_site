@@ -17,12 +17,21 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.ListServlet</servlet-class>
+        <servlet-name>adminList</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.AdminListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
+        <servlet-name>adminList</servlet-name>
+        <url-pattern>/adminList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userList</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.UserListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userList</servlet-name>
+        <url-pattern>/userList</url-pattern>
     </servlet-mapping>
 
     <servlet>

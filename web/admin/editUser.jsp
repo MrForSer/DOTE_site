@@ -4,5 +4,5 @@
 <%--<%--%>
 <%--    UserDAO userDAO = new UserDAO();--%>
 <%--    userDao.update(user);--%>
-<%--    response.sendRedirect(request.getContextPath() + "/list.jsp");--%>
+<%--    response.sendRedirect(request.getContextPath() + "/adminList.jsp");--%>
 <%--%>--%>

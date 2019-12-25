@@ -10,22 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class ListServlet extends HttpServlet {
+public class UserListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
 
         List<Employee> employees = employeeDAO.findAllEmployees();
-        req.setAttribute("employees", employees);
+        List<String> employeesData = employees.stream()
+                .map(Employee::getEmployeeData)
+                .collect(Collectors.toList());
+        req.setAttribute("employeesData", employeesData);
 
-//        List<String> employeesData = employees.stream()
-//                .map(Employee::getEmployeeData)
-//                .collect(Collectors.toList());
-//        req.setAttribute("employeesData", employeesData);
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/user/userList.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
