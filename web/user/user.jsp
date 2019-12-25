@@ -22,6 +22,8 @@
         <a href="${pageContext.request.contextPath}/list"
            onclick="location.href='${pageContext.request.contextPath}/list'"
            title="Список сотрудников">Список сотрудников</a>
+        <a href="${pageContext.request.contextPath}/logout"
+           onclick="location.href='${pageContext.request.contextPath}/logout'" title="Выход">Выход</a>
     </div>
 </header>
 <div id="top">
