@@ -33,8 +33,10 @@
                     <td>${employee.getDepartment()}</td>
                     <td>${employee.getSalary()}</td>
                     <td>${employee.getRank()}</td>
-                    <td><a href="editform.jsp?id=${employee.getId()}">Редактировать</a></td>
-                    <td><a href="deleteuser.jsp?id=${employee.getId()}">Удалить</a></td>
+                    <td><a href="${pageContext.request.contextPath}/admin/editForm.jsp?id=${employee.getId()}">Редактировать</a>
+                    </td>
+                    <td><a href="${pageContext.request.contextPath}/admin/deleteEmployee.jsp?id=${employee.getId()}">Удалить</a>
+                    </td>
                 </tr>
             </c:forEach>
         </table>

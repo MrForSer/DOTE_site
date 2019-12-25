@@ -1,61 +1,50 @@
-<%--<%@page import="ru.nstu.forser.dao.UserDAO, ru.nstu.forser.entities.User" %>--%>
-<%--<!DOCTYPE html>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">--%>
-<%--    <title>Edit Form</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-
-<%--<%--%>
-<%--    UserDAO userDAO = new UserDAO();--%>
-<%--    String id = request.getParameter("id");--%>
-<%--    User user = userDAO.findById(Integer.parseInt(id));--%>
-<%--%>--%>
-
-<%--<h1>Edit Form</h1>--%>
-<%--<form action="edituser.jsp" method="post">--%>
-<%--    <input type="hidden" name="id" value="<%=u.getId() %>"/>--%>
-<%--    <table>--%>
-<%--        <tr>--%>
-<%--            <td>Name:</td>--%>
-<%--            <td>--%>
-<%--                <input type="text" name="name" value="<%= u.getName()%>"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Password:</td>--%>
-<%--            <td>--%>
-<%--                <input type="password" name="password" value="<%= u.getPassword()%>"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Email:</td>--%>
-<%--            <td>--%>
-<%--                <input type="email" name="email" value="<%= u.getEmail()%>"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Sex:</td>--%>
-<%--            <td>--%>
-<%--                <input type="radio" name="sex" value="male"/>Male--%>
-<%--                <input type="radio" name="sex" value="female"/>Female--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Country:</td>--%>
-<%--            <td>--%>
-<%--                <select name="country">--%>
-<%--                    <option>India</option>--%>
-<%--                    <option>Pakistan</option>--%>
-<%--                    <option>Afghanistan</option>--%>
-<%--                    <option>Berma</option>--%>
-<%--                    <option>Other</option>--%>
-<%--                </select>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td colspan="2"><input type="submit" value="Edit User"/></td>--%>
-<%--        </tr>--%>
-<%--    </table>--%>
-<%--</form>--%>
-
-<%--</body>--%>
-<%--</html>--%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@page import="ru.nstu.forser.dao.EmployeeDAO, ru.nstu.forser.entities.Employee" %>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Редактировать сотрудника</title>
+    <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+<%
+    EmployeeDAO employeeDAO = new EmployeeDAO();
+    String id = request.getParameter("id");
+    Employee employee = employeeDAO.findById(Integer.parseInt(id));
+%>
+<h1>Редактировать сотрудника</h1>
+<form action="editEmployee.jsp" method="post">
+    <input type="hidden" name="id" value="<%=employee.getId() %>"/>
+    <table>
+        <tr>
+            <td>Фамилия:</td>
+            <td>
+                <input type="text" name="lastName" value="<%= employee.getLastName()%>"/></td>
+        </tr>
+        <tr>
+            <td>Цех:</td>
+            <td>
+                <input type="text" name="department" value="<%= employee.getDepartment()%>"/></td>
+        </tr>
+        <tr>
+            <td>Зарплата:</td>
+            <td>
+                <input type="number" name="salary" value="<%= employee.getSalary()%>"/></td>
+        </tr>
+        <tr>
+            <td>Разряд:</td>
+            <td>
+                <input type="number" name="rank" value="<%= employee.getRank()%>"/></td>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Редактировать сотрудника"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
