@@ -5,43 +5,37 @@ import ru.nstu.forser.dao.UserDAO;
 import ru.nstu.forser.entities.User;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.Enumeration;
 
 public class LoginServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        UserDAO userDAO = new UserDAO();
+        req.setCharacterEncoding("UTF-8");
+        String login = req.getParameter("login");
+        String password = req.getParameter("password");
+        HttpSession session = req.getSession();
+        User user = userDAO.findUser(login, password);
 
-        @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-
-            request.setCharacterEncoding("UTF8");
-
-            User user = new User();
-            HttpSession httpSession = request.getSession();
-
-            user.setLogin("login");
-            user.setPassword("password");
-
-            UserDAO userDAO = new UserDAO();
-            User checkedUser = userDAO.findUser(user.getLogin(), user.getPassword());
-            String role = checkedUser.getRole();
-
-            if(checkedUser != null){
-                user = checkedUser;
-                httpSession.setAttribute("user", user);
-                if(role.equals("admin")){
-                    resp.sendRedirect(request.getContextPath() + "/admin");
-                } else {
-                    resp.sendRedirect(request.getContextPath() + "/user");
-                }
+        if (user != null) {
+            session.setAttribute("userBean", user);
+            // todo: убрать лишнее
+//            session.setAttribute("Name", user.getFirstName() + "<br>" + user.getLastName());
+            if (user.getRole().equals("admin")) {
+                resp.sendRedirect("/admin");
             } else {
-                String error = "Пользователь не найден";
+                resp.sendRedirect("/user");
             }
-
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/login.jsp");
-            requestDispatcher.forward(request, resp);
+        } else {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/welcome.jsp");
+            requestDispatcher.forward(req, resp);
         }
+    }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 }

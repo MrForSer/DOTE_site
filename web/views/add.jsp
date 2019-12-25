@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <title>Регистрация</title>
+    <title>Регистрация пользователя</title>
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
@@ -33,12 +33,13 @@
             <label>Фамилия:
                 <input type="text" name="lastName"><br>
             </label>
-            <button type="submit">Зарегистрироваться</button><br>
+            <button type="submit">Зарегистрировать</button><br>
+<%--            todo: добавить тут роль --%>
         </form>
     </div>
 </div>
 <div>
-    <button onclick="location.href='${pageContext.request.contextPath}/'">На главную страницу</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/admin'">В админку</button>
 </div>
 </body>
 </html>
