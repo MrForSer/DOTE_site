@@ -45,7 +45,7 @@
     </div>
 </div>
 <div>
-    <button onclick="history.back()">Назад</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/admin/admin.jsp'">Назад</button>
 </div>
 </body>
 </html>

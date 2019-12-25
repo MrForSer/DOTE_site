@@ -1,7 +1,7 @@
 package ru.nstu.forser.servlets;
 
-import ru.nstu.forser.entities.User;
 import ru.nstu.forser.dao.UserDAO;
+import ru.nstu.forser.entities.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/admin/add.jsp");
         requestDispatcher.forward(req, resp);
     }
 

@@ -61,5 +61,4 @@ public class UserDAO {
         transaction.commit();
         session.close();
     }
-
 }

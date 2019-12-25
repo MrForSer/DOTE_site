@@ -54,3 +54,8 @@ function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+
+function displayUpdateForm() {
+    document.getElementById("hide").style.display = "block";
+    document.getElementById("updateForm").style.display = "block";
+}
