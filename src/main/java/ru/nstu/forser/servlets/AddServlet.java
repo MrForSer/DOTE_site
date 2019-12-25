@@ -27,8 +27,9 @@ public class AddServlet extends HttpServlet {
         String password = req.getParameter("password");
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
+        String role = req.getParameter("role");
 
-        User user = new User(login, password, firstName, lastName);
+        User user = new User(login, password, firstName, lastName, role);
         UserDAO userDAO = new UserDAO();
         userDAO.save(user);
 

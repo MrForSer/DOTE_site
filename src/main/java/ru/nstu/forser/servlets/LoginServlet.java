@@ -22,14 +22,14 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             session.setAttribute("userBean", user);
             // todo: убрать лишнее
-//            session.setAttribute("Name", user.getFirstName() + "<br>" + user.getLastName());
+            session.setAttribute("Name", user.getFirstName() + " " + user.getLastName());
             if (user.getRole().equals("admin")) {
                 resp.sendRedirect("/admin");
             } else {
                 resp.sendRedirect("/user");
             }
         } else {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/welcome.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/notFound.jsp");
             requestDispatcher.forward(req, resp);
         }
     }

@@ -32,11 +32,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public User(String login, String password, String firstName, String lastName) {
+    public User(String login, String password, String firstName, String lastName, String role) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.role = role;
     }
 
     public String getRole() {
