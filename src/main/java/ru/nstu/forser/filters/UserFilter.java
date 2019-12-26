@@ -48,7 +48,7 @@ public class UserFilter implements Filter {
         if (user != null && user.getRole().equals("user")) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
-            ((HttpServletResponse) servletResponse).sendRedirect("/views/notFound.jsp");
+            ((HttpServletResponse) servletResponse).sendRedirect(req.getContextPath() + "/views/notFound.jsp");
         }
     }
 

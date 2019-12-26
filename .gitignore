@@ -1,3 +1,5 @@
 /target/
 /out/
 /работа_с_формой.patch
+/.idea/
+/pom.xml

@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <title>Сотрудники</title>
+    <title>Поиск сотрудника</title>
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
@@ -13,7 +13,7 @@
 <div>
     <div>
         <div>
-            <h2>Сотрудники</h2>
+            <h2>Найденные сотрудники:</h2>
         </div>
         <jsp:useBean id="employees" scope="request" type="java.util.List"/>
         <table border="1">
@@ -23,8 +23,6 @@
                 <th>Цех</th>
                 <th>Зарплата</th>
                 <th>Разряд</th>
-                <th>Редактировать</th>
-                <th>Удалить</th>
             </tr>
             <c:forEach items="${employees}" var="employee">
                 <tr>
@@ -33,10 +31,6 @@
                     <td>${employee.getDepartment()}</td>
                     <td>${employee.getSalary()}</td>
                     <td>${employee.getRank()}</td>
-                    <td><a href="${pageContext.request.contextPath}/admin/editForm.jsp?id=${employee.getId()}">Редактировать</a>
-                    </td>
-                    <td><a href="${pageContext.request.contextPath}/admin/deleteEmployee.jsp?id=${employee.getId()}">Удалить</a>
-                    </td>
                 </tr>
             </c:forEach>
         </table>
@@ -44,22 +38,7 @@
     </div>
 </div>
 <div>
-    <div>
-        <div>
-            <h2>Зарплаты по цехам</h2>
-        </div>
-        <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
-        <ul>
-            <% for (Object salary : salaries) {
-                Object[] row = (Object[]) salary; %>
-            <li><%out.println(row[0] + ", " + row[1]);%></li>
-            <% }%>
-        </ul>
-        <br>
-    </div>
-</div>
-<div>
-    <button onclick="location.href='${pageContext.request.contextPath}/admin/admin.jsp'">Назад</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/user/user.jsp'">Назад</button>
 </div>
 <script src="../script.js"></script>
 </body>

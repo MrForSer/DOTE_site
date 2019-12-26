@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + "/user/user.jsp");
             }
         } else {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/notFound.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath() + "/views/notFound.jsp");
             requestDispatcher.forward(req, resp);
         }
     }
