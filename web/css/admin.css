@@ -132,26 +132,28 @@ header.fixed #logo {
     text-align: center;
     color: #fff;
     font-size: 3em;
+
+
 }
 
 /* если ширина больше 1000 пикселей */
 @media (min-width: 1001px) {
     #top {
-        height: 1000px;
+        height: 100%;
         font-size: 3em;
     }
 }
 
 @media (max-width: 1000px) and (min-width: 651px) {
     #top {
-        height: 600px;
+        height: 100%;
         font-size: 2em;
     }
 }
 
 @media (max-width: 650px) {
     #top {
-        height: 500px;
+        height: 100%;
         font-size: 1.3em;
         padding-top: 50%;
     }
