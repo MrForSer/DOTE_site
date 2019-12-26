@@ -41,6 +41,18 @@ public class EmployeeDAO {
         return employee;
     }
 
+    public List<?> getSalaryByDepartment() {
+        Session session = HibernateSessionFactory
+                .getSessionFactory()
+                .openSession();
+
+        String hql = "select e.department, SUM(e.salary) from Employee e group by e.department";
+
+        List<?> list = session.createQuery(hql).list();
+        session.close();
+        return list;
+    }
+
     public Employee findById(int id) {
         return HibernateSessionFactory.getSessionFactory().openSession().get(Employee.class, id);
     }

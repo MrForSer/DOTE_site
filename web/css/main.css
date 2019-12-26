@@ -33,8 +33,11 @@ header {
     width: 100%;
     padding: 10px 0.5% 0 0.5%;
     background: transparent;
-    float: left;
+    display: flex;
+    justify-content: space-between;
     position: fixed;
+    padding-right: 30px;
+    box-sizing: border-box;
 }
 
 /* Настройки для логотипа */
@@ -58,11 +61,6 @@ header #logo span {
         width: 30%;
         font-size: 1.1em;
     }
-
-    #about {
-        float: right;
-        width: 67%;
-    }
 }
 
 /* если ширина сайта меньше 700px, то применяется следующий стиль */
@@ -85,6 +83,7 @@ header #logo span {
     font-size: 1em;
     line-height: 40px;
     margin-bottom: 10px;
+    margin-left: auto;
 }
 
 /* настройки для ссылок блока about */
