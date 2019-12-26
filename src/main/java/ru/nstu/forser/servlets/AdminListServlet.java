@@ -20,7 +20,7 @@ public class AdminListServlet extends HttpServlet {
         List<?> salaries = employeeDAO.getSalaryByDepartment();
         req.setAttribute("salaries", salaries);
 
-        List<Employee> employees = employeeDAO.findAllEmployees();
+        List<Employee> employees = employeeDAO.findAllEmployments();
         req.setAttribute("employees", employees);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/admin/adminList.jsp");

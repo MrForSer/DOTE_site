@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class SearchServlet extends HttpServlet {
+public class DepartmentSearchServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
 
-        String lastName = request.getParameter("lastName");
+        String department = request.getParameter("department");
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
-        List<Employee> employeeList = employeeDAO.findAllEmployees(lastName);
+        List<Employee> employeeList = employeeDAO.findAllEmpByDepartment(department);
 
         request.setAttribute("employees", employeeList);
 

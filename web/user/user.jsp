@@ -20,9 +20,15 @@
         <a href="${pageContext.request.contextPath}/userList"
            onclick="location.href='${pageContext.request.contextPath}/userList'"
            title="Список сотрудников">Список сотрудников</a>
-        <a href="${pageContext.request.contextPath}/searchForm"
-           onclick="location.href='${pageContext.request.contextPath}/searchForm'"
-           title="Список сотрудников">Поиск сотрудника</a>
+
+        <a href="${pageContext.request.contextPath}/searchByName"
+           onclick="location.href='${pageContext.request.contextPath}/searchByName'"
+           title="Поиск по фамилии">Поиск по фамилии</a>
+
+        <a href="${pageContext.request.contextPath}/searchByDepForm"
+           onclick="location.href='${pageContext.request.contextPath}/searchByDepForm'"
+           title="Поиск по цеху">Поиск по цеху</a>
+
         <a href="${pageContext.request.contextPath}/logout"
            onclick="location.href='${pageContext.request.contextPath}/logout'" title="Выход">Выход</a>
     </div>

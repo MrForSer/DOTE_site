@@ -12,10 +12,16 @@
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
-<form method="post" action="searchByLastName">
-    <h3>Поиск сотрудника по фамилии</h3></td>
-    <strong>Фамилия:</strong>
-    <input type="text" name="lastName" id="lastName">
+<form method="post" action="searchByDepartment">
+    <h3>Поиск работников по цеху</h3>
+    <label>Цех:
+        <select name="department">
+            <option value="Цех 1">Цех 1</option>
+            <option value="Цех 2">Цех 2</option>
+            <option value="Цех 3">Цех 3</option>
+            <option value="Цех 4">Цех 4</option>
+        </select><br>
+    </label>
     <input type="submit" name="submit" value="Найти">
 </form>
 </body>

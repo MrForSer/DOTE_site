@@ -81,20 +81,38 @@
 
     <servlet>
         <servlet-name>searchServlet</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.SearchServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.LastNameSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchServlet</servlet-name>
-        <url-pattern>/search</url-pattern>
+        <url-pattern>/searchByLastName</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>searchFormServlet</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.SearchFormServlet</servlet-class>
+        <servlet-name>departmentSearchServlet</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.DepartmentSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>searchFormServlet</servlet-name>
-        <url-pattern>/searchForm</url-pattern>
+        <servlet-name>departmentSearchServlet</servlet-name>
+        <url-pattern>/searchByDepartment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchByNameForm</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.SearchByNameForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchByNameForm</servlet-name>
+        <url-pattern>/searchByName</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchByDepForm</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.SearchByDepForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchByDepForm</servlet-name>
+        <url-pattern>/searchByDepForm</url-pattern>
     </servlet-mapping>
 
     <filter>

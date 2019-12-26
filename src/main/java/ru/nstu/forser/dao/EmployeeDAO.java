@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 import ru.nstu.forser.entities.Employee;
 import ru.nstu.forser.utils.HibernateSessionFactory;
 
-import javax.persistence.NoResultException;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -19,7 +18,7 @@ public class EmployeeDAO {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Employee> findAllEmployees() {
+    public List<Employee> findAllEmployments() {
         return (List<Employee>) HibernateSessionFactory
                 .getSessionFactory()
                 .openSession()
@@ -27,27 +26,23 @@ public class EmployeeDAO {
                 .list();
     }
 
-    public Employee findEmployee(String lastName) {
-        Employee employee = null;
-        try {
-            employee = (Employee) HibernateSessionFactory
-                    .getSessionFactory()
-                    .openSession()
-                    .createQuery("FROM Employee WHERE lastName = :lastName")
-                    .setParameter("lastName", lastName)
-                    .getSingleResult();
-        } catch (NoResultException ignore) {
-        }
-        return employee;
-    }
-
     @SuppressWarnings("unchecked")
-    public List<Employee> findAllEmployees(String lastName) {
+    public List<Employee> findAllEmpByName(String lastName) {
         return (List<Employee>) HibernateSessionFactory
                 .getSessionFactory()
                 .openSession()
                 .createQuery("FROM Employee WHERE lastName = :lastName ORDER BY lastName")
                 .setParameter("lastName", lastName)
+                .list();
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Employee> findAllEmpByDepartment(String department) {
+        return (List<Employee>) HibernateSessionFactory
+                .getSessionFactory()
+                .openSession()
+                .createQuery("FROM Employee WHERE department = :department ORDER BY lastName")
+                .setParameter("department", department)
                 .list();
     }
 

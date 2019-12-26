@@ -50,8 +50,8 @@
         </div>
         <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
         <ul>
-            <% for (Object salary : salaries) {
-                Object[] row = (Object[]) salary; %>
+            <% for (int i = 0; i < salaries.size(); i++) {
+                Object[] row = (Object[]) salaries.get(i); %>
             <li><%out.println(row[0] + ", " + row[1]);%></li>
             <% }%>
         </ul>

@@ -18,7 +18,7 @@ public class UserListServlet extends HttpServlet {
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
 
-        List<Employee> employees = employeeDAO.findAllEmployees();
+        List<Employee> employees = employeeDAO.findAllEmployments();
         List<String> employeesData = employees.stream()
                 .map(Employee::getEmployeeData)
                 .collect(Collectors.toList());
