@@ -12,17 +12,28 @@
 </header>
 <div>
     <div>
-        <div>
-            <h2>Сотрудники</h2>
-        </div>
-        <jsp:useBean id="employeesData" scope="request" type="java.util.List"/>
-        <ul>
-            <c:forEach items="${employeesData}" var="empData">
-                <li>${empData}</li>
-            </c:forEach>
-        </ul>
-        <br>
+        <h2>Сотрудники</h2>
     </div>
+    <jsp:useBean id="employeesData" scope="request" type="java.util.List"/>
+    <ul>
+        <c:forEach items="${employeesData}" var="empData">
+            <li>${empData}</li>
+        </c:forEach>
+    </ul>
+    <br>
+</div>
+<div>
+    <div>
+        <h2>Зарплаты по цехам</h2>
+    </div>
+    <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
+    <ul>
+        <% for (int i = 0; i < salaries.size(); i++) {
+            Object[] row = (Object[]) salaries.get(i); %>
+        <li><%out.println(row[0] + ", " + row[1]);%></li>
+        <% }%>
+    </ul>
+    <br>
 </div>
 <div>
     <button onclick="history.back()">Назад</button>

@@ -16,10 +16,6 @@ public class AdminListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
-
-        List<?> salaries = employeeDAO.getSalaryByDepartment();
-        req.setAttribute("salaries", salaries);
-
         List<Employee> employees = employeeDAO.findAllEmployments();
         req.setAttribute("employees", employees);
 
