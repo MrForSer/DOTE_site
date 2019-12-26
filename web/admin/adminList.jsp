@@ -44,6 +44,22 @@
     </div>
 </div>
 <div>
+    <div>
+        <div>
+            <h2>Зарплаты по цехам</h2>
+        </div>
+        <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
+        <ul>
+            <% for (int i = 0; i < salaries.size(); i++) {
+                Object[] row = (Object[]) salaries.get(i); %>
+                <li><%out.println(row[0] + ", " + row[1]);%></li>
+            <% }%>
+        </ul>
+        <br>
+    </div>
+</div>
+<div>
+<div>
     <button onclick="location.href='${pageContext.request.contextPath}/admin/admin.jsp'">Назад</button>
 </div>
 <script src="../script.js"></script>

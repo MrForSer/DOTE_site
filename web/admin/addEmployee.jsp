@@ -36,7 +36,13 @@
                 <input type="number" name="salary"><br>
             </label>
             <label>Категория:
-                <input type="number" name="rank"><br>
+                <select name="rank">
+                    <option value="1">Категория 1</option>
+                    <option value="2">Категория 2</option>
+                    <option value="3">Категория 3</option>
+                    <option value="4">Категория 4</option>
+                    <option value="5">Категория 5</option>
+                </select><br>
             </label>
             <button type="submit">Добавить</button>
             <br>

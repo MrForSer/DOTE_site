@@ -18,6 +18,11 @@ public class Employee {
         this.lastName = null;
     }
 
+    public Employee(String department) {
+        this.lastName = null;
+        this.department = department;
+    }
+
     public Employee(int id, String lastName, String department, int salary, int rank) {
         this.id = id;
         this.lastName = lastName;

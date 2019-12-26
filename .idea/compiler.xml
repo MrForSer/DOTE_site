@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DOTE_site" target="1.8" />
+      <module name="DOTE_site" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
