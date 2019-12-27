@@ -17,8 +17,10 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserDAO userDAO = new UserDAO();
         req.setCharacterEncoding("UTF-8");
+
         String login = req.getParameter("login");
         String password = req.getParameter("password");
+
         HttpSession session = req.getSession();
         User user = userDAO.findUser(login, password);
 

@@ -17,6 +17,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>deleteEmployee</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.operations.DeleteEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteEmployee</servlet-name>
+        <url-pattern>/deleteEmployee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>addEmployee</servlet-name>
         <servlet-class>ru.nstu.forser.servlets.operations.AddEmployeeServlet</servlet-class>
     </servlet>
