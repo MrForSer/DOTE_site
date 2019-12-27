@@ -1,6 +1,7 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.views;
 
 import ru.nstu.forser.dao.EmployeeDAO;
+import ru.nstu.forser.entities.Employee;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,17 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class SearchByProfessionForm extends HttpServlet {
+public class AdminListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Employee> employees = employeeDAO.findAllEmployees();
+        req.setAttribute("employees", employees);
 
-        List<String> professions = employeeDAO.getAllProfessions();
-        req.setAttribute("professions", professions);
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("user/searchByProfession.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/admin/adminList.jsp");
         requestDispatcher.forward(req, resp);
     }
 }

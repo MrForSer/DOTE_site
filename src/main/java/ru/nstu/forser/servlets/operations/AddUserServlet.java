@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.operations;
 
 import ru.nstu.forser.dao.UserDAO;
 import ru.nstu.forser.entities.User;

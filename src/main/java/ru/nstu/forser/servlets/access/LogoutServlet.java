@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.access;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.search;
 
 import ru.nstu.forser.dao.EmployeeDAO;
 import ru.nstu.forser.entities.Employee;
@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DepartmentSearchServlet extends HttpServlet {
+public class LastNameSearchServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
 
-        String department = request.getParameter("department");
+        String lastName = request.getParameter("lastName");
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
-        List<Employee> employeeList = employeeDAO.findAllEmpByDepartment(department);
+        List<Employee> employeeList = employeeDAO.findAllEmpByName(lastName);
 
         request.setAttribute("employees", employeeList);
 

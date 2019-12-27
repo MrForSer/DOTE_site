@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.access;
 
 
 import ru.nstu.forser.dao.UserDAO;

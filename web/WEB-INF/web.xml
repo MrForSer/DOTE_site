@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>addUser</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.AddUserServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.operations.AddUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addUser</servlet-name>
@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>addEmployee</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.AddEmployeeServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.operations.AddEmployeeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addEmployee</servlet-name>
@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>adminList</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.AdminListServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.views.AdminListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>adminList</servlet-name>
@@ -36,7 +36,7 @@
 
     <servlet>
         <servlet-name>userList</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.UserListServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.views.UserListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>userList</servlet-name>
@@ -45,7 +45,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.LoginServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.access.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -54,7 +54,7 @@
 
     <servlet>
         <servlet-name>admin</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.AdminServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.AdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
@@ -63,7 +63,7 @@
 
     <servlet>
         <servlet-name>user</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.UserServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>user</servlet-name>
@@ -72,7 +72,7 @@
 
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.LogoutServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.access.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
@@ -81,7 +81,7 @@
 
     <servlet>
         <servlet-name>searchServlet</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.LastNameSearchServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.search.LastNameSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchServlet</servlet-name>
@@ -90,7 +90,7 @@
 
     <servlet>
         <servlet-name>departmentSearchServlet</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.DepartmentSearchServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.search.DepartmentSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>departmentSearchServlet</servlet-name>
@@ -99,7 +99,7 @@
 
     <servlet>
         <servlet-name>professionSearchServlet</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.ProfessionSearchServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.search.ProfessionSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>professionSearchServlet</servlet-name>
@@ -108,7 +108,7 @@
 
     <servlet>
         <servlet-name>searchByNameForm</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.SearchByNameForm</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.SearchByNameForm</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchByNameForm</servlet-name>
@@ -117,7 +117,7 @@
 
     <servlet>
         <servlet-name>searchByDepForm</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.SearchByDepForm</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.SearchByDepForm</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchByDepForm</servlet-name>
@@ -126,7 +126,7 @@
 
     <servlet>
         <servlet-name>searchByProfessionForm</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.SearchByProfessionForm</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.SearchByProfessionForm</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchByProfessionForm</servlet-name>

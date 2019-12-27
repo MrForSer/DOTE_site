@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets;
+package ru.nstu.forser.servlets.search;
 
 import ru.nstu.forser.dao.EmployeeDAO;
 import ru.nstu.forser.entities.Employee;
