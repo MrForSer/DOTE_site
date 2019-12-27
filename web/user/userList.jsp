@@ -28,10 +28,9 @@
     </div>
     <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
     <ul>
-        <% for (Object salary : salaries) {
-            Object[] row = (Object[]) salary; %>
-        <li><%out.println(row[0] + ", " + row[1]);%></li>
-        <%}%>
+        <c:forEach items="${salaries}" var="salary">
+            <li>${salary}</li>
+        </c:forEach>
     </ul>
     <br>
 </div>

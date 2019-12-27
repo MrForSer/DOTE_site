@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,7 +19,13 @@ public class UserListServlet extends HttpServlet {
 
         EmployeeDAO employeeDAO = new EmployeeDAO();
 
-        List<?> salaries = employeeDAO.getSalaryByDepartment();
+        List<?> data = employeeDAO.getSalaryByDepartment();
+        List<String> salaries = new ArrayList<>();
+        for (Object salary : data) {
+            Object[] row = (Object[]) salary;
+            salaries.add(row[0] + ", " + row[1]);
+        }
+
         req.setAttribute("salaries", salaries);
 
         List<Employee> employees = employeeDAO.findAllEmployees();
