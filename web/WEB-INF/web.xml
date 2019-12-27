@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>deleteEmployee</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.operations.DeleteEmployee</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.operations.DeleteEmployeeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteEmployee</servlet-name>
@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>editEmployeeForm</servlet-name>
-        <servlet-class>ru.nstu.forser.servlets.operations.EditEmployeeFormServlet</servlet-class>
+        <servlet-class>ru.nstu.forser.servlets.redirect.EditEmployeeFormServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>editEmployeeForm</servlet-name>

@@ -1,4 +1,4 @@
-package ru.nstu.forser.servlets.operations;
+package ru.nstu.forser.servlets.redirect;
 
 import ru.nstu.forser.dao.EmployeeDAO;
 import ru.nstu.forser.entities.Employee;
