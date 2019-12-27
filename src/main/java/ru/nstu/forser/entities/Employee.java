@@ -12,6 +12,7 @@ public class Employee {
     private String department;
     private int salary;
     private int rank;
+    private String profession;
 
     // необходимо для useBean, не удалять
     public Employee() {
@@ -23,7 +24,7 @@ public class Employee {
         this.department = department;
     }
 
-    public Employee(int id, String lastName, String department, int salary, int rank) {
+    public Employee(int id, String lastName, String department, int salary, int rank, String profession) {
         this.id = id;
         this.lastName = lastName;
         this.department = department;
@@ -31,15 +32,23 @@ public class Employee {
         this.rank = rank;
     }
 
-    public Employee(String lastName, String department, Integer salary, Integer rank) {
+    public Employee(String lastName, String department, Integer salary, Integer rank, String profession) {
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
         this.rank = rank;
     }
 
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
     public String getEmployeeData() {
-        return "Фамилия: " + lastName + " Цех: " + department + " Зарплата: " + salary + " Разряд: " + rank;
+        return "Фамилия: " + lastName + " Цех: " + department + " Зарплата: " + salary + " Разряд: " + rank + " Профессия: " + profession;
     }
 
     public int getId() {

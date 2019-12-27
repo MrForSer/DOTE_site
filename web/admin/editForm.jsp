@@ -41,6 +41,11 @@
                 <input type="number" name="rank" value="<%= employee.getRank()%>"/></td>
         </tr>
         <tr>
+            <td>Профессия:</td>
+            <td>
+                <input type="text" name="profession" value="<%= employee.getProfession()%>"/></td>
+        </tr>
+        <tr>
             <td colspan="2"><input type="submit" value="Редактировать сотрудника"/></td>
         </tr>
     </table>

@@ -21,7 +21,7 @@ public class UserListServlet extends HttpServlet {
         List<?> salaries = employeeDAO.getSalaryByDepartment();
         req.setAttribute("salaries", salaries);
 
-        List<Employee> employees = employeeDAO.findAllEmployments();
+        List<Employee> employees = employeeDAO.findAllEmployees();
         List<String> employeesData = employees.stream()
                 .map(Employee::getEmployeeData)
                 .collect(Collectors.toList());

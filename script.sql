@@ -16,25 +16,27 @@ VALUES (DEFAULT, 'user', 'user', 'Иван', 'Иванов', 'user');
 -- DROP TABLE users;
 -- SELECT * FROM users;
 
+DROP TABLE employees;
 CREATE TABLE employees
 (
     id         serial primary key,
     lastName   varchar(255),
     department varchar(255),
     salary     integer,
-    rank       integer
+    rank       integer,
+    profession varchar(255)
 );
-INSERT INTO employees (id, lastName, department, salary, rank)
-VALUES (DEFAULT, 'Коновалов', 'Цех 1', 45000, 4);
-INSERT INTO employees (id, lastName, department, salary, rank)
-VALUES (DEFAULT, 'Сидоров', 'Цех 1', 40000, 3);
-INSERT INTO employees (id, lastName, department, salary, rank)
-VALUES (DEFAULT, 'Волков', 'Цех 1', 44000, 4);
-INSERT INTO employees (id, lastName, department, salary, rank)
-VALUES (DEFAULT, 'Стариненко', 'Цех 1', 50000, 5);
+INSERT INTO employees (id, lastName, department, salary, rank, profession)
+VALUES (DEFAULT, 'Коновалов', 'Цех 1', 45000, 4, 'Механик');
+INSERT INTO employees (id, lastName, department, salary, rank, profession)
+VALUES (DEFAULT, 'Сидоров', 'Цех 2', 40000, 3, 'Электрик');
+INSERT INTO employees (id, lastName, department, salary, rank, profession)
+VALUES (DEFAULT, 'Волков', 'Цех 1', 44000, 4, 'Оператор ЧПУ');
+INSERT INTO employees (id, lastName, department, salary, rank, profession)
+VALUES (DEFAULT, 'Стариненко', 'Цех 2', 50000, 5, 'Начальникц цеха');
+INSERT INTO employees (id, lastName, department, salary, rank, profession)
+VALUES (DEFAULT, 'Абрамов', 'Цех 3', 50000, 1, 'Стажер');
 
 -- SELECT * FROM employees;
 SELECT *
-FROM employees
-WHERE lastName = 'Волков'
-order by lastname;
+FROM employees;

@@ -26,8 +26,9 @@ public class AddEmployeeServlet extends HttpServlet {
         String department = req.getParameter("department");
         Integer salary = Integer.parseInt(req.getParameter("salary"));
         Integer rank = Integer.parseInt(req.getParameter("rank"));
+        String profession = req.getParameter("profession");
 
-        Employee employee = new Employee(lastName, department, salary, rank);
+        Employee employee = new Employee(lastName, department, salary, rank, profession);
         EmployeeDAO employeeDAO = new EmployeeDAO();
         employeeDAO.save(employee);
 

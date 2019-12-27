@@ -28,10 +28,10 @@
     </div>
     <jsp:useBean id="salaries" scope="request" type="java.util.List"/>
     <ul>
-        <% for (int i = 0; i < salaries.size(); i++) {
-            Object[] row = (Object[]) salaries.get(i); %>
+        <% for (Object salary : salaries) {
+            Object[] row = (Object[]) salary; %>
         <li><%out.println(row[0] + ", " + row[1]);%></li>
-        <% }%>
+        <%}%>
     </ul>
     <br>
 </div>

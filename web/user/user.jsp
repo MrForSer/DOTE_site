@@ -29,6 +29,10 @@
            onclick="location.href='${pageContext.request.contextPath}/searchByDepForm'"
            title="Поиск по цеху">Поиск по цеху</a>
 
+        <a href="${pageContext.request.contextPath}/searchByProfessionForm"
+           onclick="location.href='${pageContext.request.contextPath}/searchByProfessionForm'"
+           title="Поиск по профессии">Поиск по профессии</a>
+
         <a href="${pageContext.request.contextPath}/logout"
            onclick="location.href='${pageContext.request.contextPath}/logout'" title="Выход">Выход</a>
     </div>

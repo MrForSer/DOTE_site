@@ -98,6 +98,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>professionSearchServlet</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.ProfessionSearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>professionSearchServlet</servlet-name>
+        <url-pattern>/searchByProfession</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>searchByNameForm</servlet-name>
         <servlet-class>ru.nstu.forser.servlets.SearchByNameForm</servlet-class>
     </servlet>
@@ -113,6 +122,15 @@
     <servlet-mapping>
         <servlet-name>searchByDepForm</servlet-name>
         <url-pattern>/searchByDepForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchByProfessionForm</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.SearchByProfessionForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchByProfessionForm</servlet-name>
+        <url-pattern>/searchByProfessionForm</url-pattern>
     </servlet-mapping>
 
     <filter>

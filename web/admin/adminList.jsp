@@ -23,6 +23,7 @@
                 <th>Цех</th>
                 <th>Зарплата</th>
                 <th>Разряд</th>
+                <th>Профессия</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
             </tr>
@@ -33,6 +34,7 @@
                     <td>${employee.getDepartment()}</td>
                     <td>${employee.getSalary()}</td>
                     <td>${employee.getRank()}</td>
+                    <td>${employee.getProfession()}</td>
                     <td><a href="${pageContext.request.contextPath}/admin/editForm.jsp?id=${employee.getId()}">Редактировать</a>
                     </td>
                     <td><a href="${pageContext.request.contextPath}/admin/deleteEmployee.jsp?id=${employee.getId()}">Удалить</a>

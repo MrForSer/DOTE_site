@@ -18,7 +18,7 @@ public class EmployeeDAO {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Employee> findAllEmployments() {
+    public List<Employee> findAllEmployees() {
         return (List<Employee>) HibernateSessionFactory
                 .getSessionFactory()
                 .openSession()
@@ -46,12 +46,32 @@ public class EmployeeDAO {
                 .list();
     }
 
+    @SuppressWarnings("unchecked")
+    public List<Employee> findAllEmpByProfession(String profession) {
+        return (List<Employee>) HibernateSessionFactory
+                .getSessionFactory()
+                .openSession()
+                .createQuery("FROM Employee WHERE profession = :profession ORDER BY lastName")
+                .setParameter("profession", profession)
+                .list();
+    }
+
+    public List<String> getAllProfessions() {
+        Session session = HibernateSessionFactory
+                .getSessionFactory()
+                .openSession();
+        String hql = "SELECT DISTINCT e.profession FROM Employee e";
+        List<String> list = session.createQuery(hql).list();
+        session.close();
+        return list;
+    }
+
     public List<?> getSalaryByDepartment() {
         Session session = HibernateSessionFactory
                 .getSessionFactory()
                 .openSession();
 
-        String hql = "select e.department, SUM(e.salary) from Employee e group by e.department";
+        String hql = "SELECT e.department, SUM(e.salary) FROM Employee e GROUP BY e.department";
 
         List<?> list = session.createQuery(hql).list();
         session.close();

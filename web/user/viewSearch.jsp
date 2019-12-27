@@ -23,6 +23,7 @@
                 <th>Цех</th>
                 <th>Зарплата</th>
                 <th>Разряд</th>
+                <th>Профессия</th>
             </tr>
             <c:forEach items="${employees}" var="employee">
                 <tr>
@@ -31,6 +32,7 @@
                     <td>${employee.getDepartment()}</td>
                     <td>${employee.getSalary()}</td>
                     <td>${employee.getRank()}</td>
+                    <td>${employee.getProfession()}</td>
                 </tr>
             </c:forEach>
         </table>

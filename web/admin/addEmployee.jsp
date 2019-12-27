@@ -44,6 +44,15 @@
                     <option value="5">Категория 5</option>
                 </select><br>
             </label>
+            <label>Профессия:
+                <select name="profession">
+                    <option value="Механик">Механик</option>
+                    <option value="Электрик">Электрик</option>
+                    <option value="Оператор ЧПУ">Оператор ЧПУ</option>
+                    <option value="Начальник цеха">Начальник цеха</option>
+                    <option value="Стажер">Стажер</option>
+                </select><br>
+            </label>
             <button type="submit">Добавить</button>
             <br>
         </form>
