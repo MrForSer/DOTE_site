@@ -26,6 +26,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>editEmployeeForm</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.operations.EditEmployeeFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editEmployeeForm</servlet-name>
+        <url-pattern>/editEmployeeForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editEmployee</servlet-name>
+        <servlet-class>ru.nstu.forser.servlets.operations.EditEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editEmployee</servlet-name>
+        <url-pattern>/editEmployee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>addEmployee</servlet-name>
         <servlet-class>ru.nstu.forser.servlets.operations.AddEmployeeServlet</servlet-class>
     </servlet>

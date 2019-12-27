@@ -35,7 +35,11 @@
                     <td>${employee.getSalary()}</td>
                     <td>${employee.getRank()}</td>
                     <td>${employee.getProfession()}</td>
-                    <td><a href="${pageContext.request.contextPath}/admin/editForm.jsp?id=${employee.getId()}">Редактировать</a>
+                    <td>
+                        <form action="editEmployeeForm" method="post">
+                            <input type="submit" name="deleteEmployee" value="Редактировать"/>
+                            <input type="hidden" name="id" value="${employee.getId()}"/>
+                        </form>
                     </td>
                     <td>
                         <form action="deleteEmployee" method="post">
