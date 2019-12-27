@@ -20,8 +20,10 @@
             <option value="Цех 2">Цех 2</option>
             <option value="Цех 3">Цех 3</option>
             <option value="Цех 4">Цех 4</option>
-        </select><br>
+        </select>
     </label>
+    <br>
+    <br>
     <input type="submit" name="submit" value="Найти">
 </form>
 </body>

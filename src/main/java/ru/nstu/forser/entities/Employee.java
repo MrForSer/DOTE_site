@@ -30,6 +30,7 @@ public class Employee {
         this.department = department;
         this.salary = salary;
         this.rank = rank;
+        this.profession = profession;
     }
 
     public Employee(String lastName, String department, Integer salary, Integer rank, String profession) {
@@ -37,6 +38,7 @@ public class Employee {
         this.department = department;
         this.salary = salary;
         this.rank = rank;
+        this.profession = profession;
     }
 
     public String getProfession() {

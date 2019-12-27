@@ -13,7 +13,7 @@
 </head>
 <body>
 <form method="post" action="searchByProfession">
-    <h3>Поиск работников по цеху</h3>
+    <h3>Поиск работников по профессии</h3>
     <label>Профессия:
         <jsp:useBean id="professions" scope="request" type="java.util.List"/>
         <select name="profession">
@@ -22,6 +22,7 @@
             </c:forEach>
         </select>
     </label>
+    <br>
     <br>
     <input type="submit" name="submit" value="Найти">
 </form>
