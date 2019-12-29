@@ -14,7 +14,7 @@
 <body>
 <header>
     <div id="logo" onclick="slowScroll('#top')">
-        <span>Salary Project</span>
+        <span>DevelopmentOnTheEdge</span>
     </div>
     <div id="about">
         <a href="${pageContext.request.contextPath}/addUser"

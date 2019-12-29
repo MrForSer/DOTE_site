@@ -25,11 +25,11 @@ public class CheckUserLoginServlet extends HttpServlet {
         UserDAO userDAO = new UserDAO();
         User user = userDAO.checkLogin(login);
 
-        String greetings = "Логин доступен";
+        String loginStatus = "Логин доступен";
         if (user != null) {
-            greetings = "Пользователь " + login + " уже существует.";
+            loginStatus = "Пользователь " + login + " уже существует.";
         }
 
-        response.getWriter().write(greetings);
+        response.getWriter().write(loginStatus);
     }
 }
