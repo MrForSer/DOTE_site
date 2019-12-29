@@ -10,6 +10,8 @@
     <title>DevelopmentOnTheEdge</title>
     <link href="css/main.css" rel="stylesheet">
     <link href="images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
 <header>
@@ -28,7 +30,7 @@
 <div class="hide" id="hide"></div>
 <div class="loginForm" id="loginForm">
     <form name="Форма авторизации" action="login">
-        <input type="text" name="login" size="25"/>
+        <input type="text" name="login" id="login" size="25"/>
         <input type="password" name="password" size=25/>
         <input type="submit" value="Войти">
         <input type="reset" value="Очистить форму">
@@ -40,8 +42,5 @@
     <p>Тел. +7(913)788-24-68</p>
     <p>E-mail: mr.forser@gmail.com</p>
 </footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>

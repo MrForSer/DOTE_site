@@ -42,6 +42,6 @@
 <div>
     <button onclick="location.href='${pageContext.request.contextPath}/user/user.jsp'">Назад</button>
 </div>
-<script src="../script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

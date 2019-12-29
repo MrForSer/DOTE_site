@@ -5,6 +5,8 @@
 <head>
     <title>Регистрация пользователя</title>
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/ajax.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
@@ -22,7 +24,8 @@
         </div>
         <form method="post">
             <label>Логин:
-                <input type="text" name="login"><br>
+                <input type="text" name="login" id="login"><br>
+                <div id="ajaxGetUserServletResponse"></div>
             </label>
             <label>Пароль:
                 <input type="password" name="password"><br>

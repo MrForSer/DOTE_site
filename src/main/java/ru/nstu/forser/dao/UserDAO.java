@@ -42,6 +42,20 @@ public class UserDAO {
         return user;
     }
 
+    public User checkLogin(String login) {
+        User user = null;
+        try {
+            user = (User) HibernateSessionFactory
+                    .getSessionFactory()
+                    .openSession()
+                    .createQuery("FROM User WHERE login = :login")
+                    .setParameter("login", login)
+                    .getSingleResult();
+        } catch (NoResultException ignore) {
+        }
+        return user;
+    }
+
     public User findById(int id) {
         return HibernateSessionFactory.getSessionFactory().openSession().get(User.class, id);
     }

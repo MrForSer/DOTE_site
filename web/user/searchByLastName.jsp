@@ -10,6 +10,51 @@
     <title>Поиск работника</title>
     <link href="../css/user.css" rel="stylesheet">
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript">
+        function VerifyUsername() {
+            //alert("In Verify Method");
+            var name = document.getElementById("lastName").value;
+            //alert(name);
+            var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+                //alert("http");
+            } else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                alert("http active");
+            }
+            xmlhttp.onreadystatechange = function () {
+                //alert("in Function()");
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    try {
+                        //alert("In Try");
+                        document.getElementById("errorpass").innerHTML = xmlhttp.responseText;
+                        /*var response = xmlhttp.responseText;
+                        alert(response);
+                        if(response.toString()=='notmatch')
+                        {
+                            alert("Ok");
+                            document.getElementById("errorpass").innerHTML ="OK";
+                        }
+                        if(response =='match')
+                        {
+                            alert("Not Ok");
+                            document.getElementById("errorpass").innerHTML ="Take Other Name.";
+                        }*/
+                    } catch (ex) {
+                        alert("Exception in function " + ex);
+                    }
+                }
+            }
+            //xmlhttp.open("POST","servlet/UsernamePresence_Serv?UserId"+name,true);
+            xmlhttp.open("POST", "servlet/UsernamePresence_Serv?" + name, true);
+            var params = "UserId=" + name;
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.setRequestHeader("Content-length", params.length);
+            xmlhttp.setRequestHeader("Connection", "close");
+            xmlhttp.send(params);
+        }
+    </script>
 </head>
 <body>
 <form method="post" action="searchByLastName">
