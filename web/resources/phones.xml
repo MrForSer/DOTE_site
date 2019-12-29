@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PHONE_CATALOG>
+    <PHONE>
+        <PERSON>Андрей Коржин</PERSON>
+        <MOBILE_PHONE>+7(913)635-35-35</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Сергей Пригожин</PERSON>
+        <MOBILE_PHONE>+7(913)725-25-25</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Валдислав Лещук</PERSON>
+        <MOBILE_PHONE>+7(913)225-35-45</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Антон Городецкий</PERSON>
+        <MOBILE_PHONE>+7(913)555-55-55</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Радислав Караваев</PERSON>
+        <MOBILE_PHONE>+7(913)222-32-22</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Виктор Волков</PERSON>
+        <MOBILE_PHONE>+7(913)656-66-55</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Александр Стариненко</PERSON>
+        <MOBILE_PHONE>+7(913)322-32-32</MOBILE_PHONE>
+    </PHONE>
+    <PHONE>
+        <PERSON>Андрей Прилепин</PERSON>
+        <MOBILE_PHONE>+7(913)755-65-65</MOBILE_PHONE>
+    </PHONE>
+</PHONE_CATALOG>

@@ -26,6 +26,8 @@
         <a href="${pageContext.request.contextPath}/adminList"
            onclick="location.href='${pageContext.request.contextPath}/adminList'" title="Список работников">Список
             работников</a>
+        <a href="${pageContext.request.contextPath}/admin/phones.html"
+           onclick="location.href='${pageContext.request.contextPath}/admin/phones.html'" title="Телефонный справочник">Телефоны</a>
         <a href="${pageContext.request.contextPath}/logout"
            onclick="location.href='${pageContext.request.contextPath}/logout'" title="Выход">Выход</a>
     </div>

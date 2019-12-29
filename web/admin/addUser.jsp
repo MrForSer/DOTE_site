@@ -6,7 +6,7 @@
     <title>Регистрация пользователя</title>
     <link href="../images/dote-ico.png" rel="shortcut icon" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/js/ajax.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/loginCheck.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
