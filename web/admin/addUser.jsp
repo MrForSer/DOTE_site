@@ -25,7 +25,7 @@
         <form method="post">
             <label>Логин:
                 <input type="text" name="login" id="login"><br>
-                <div id="ajaxGetUserServletResponse"></div>
+                <div id="ajaxCheckUserLoginServlet"></div>
             </label>
             <label>Пароль:
                 <input type="password" name="password"><br>
