@@ -3,7 +3,7 @@ function loadXMLDoc() {
     var xmlhttp = new XMLHttpRequest();
     // обработка ответа от сервера - при изменении состояния вызывается функция
     xmlhttp.onreadystatechange = function () {
-        // проверка состояния и статуса (readyState = 4 ("loading") && http status = 200 ("ok"))
+        // проверка состояния и статуса (readyState = 4 ("готов") && http status = 200 ("ok"))
         if (this.readyState === 4 && this.status === 200) {
             insertData(this);
         }
